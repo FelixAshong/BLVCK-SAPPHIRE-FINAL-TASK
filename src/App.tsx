@@ -20,6 +20,12 @@ import {
   FaUserTie,
   FaChevronRight
 } from "react-icons/fa";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Services from "./components/Services";
+import Footer from "./components/Footer";
+import FAQ from "./components/FAQ";
+import Contact from "./components/Contact";
 
 function App() {
   // FAQ accordion state
@@ -106,362 +112,19 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
       <div className="w-full max-w-7xl mx-auto relative px-4 sm:px-6 lg:px-8">
-      {/* Header */}
-       <header className={`relative w-full ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
-         {/* Desktop Header - hidden on mobile */}
-         <div className="hidden lg:block">
-           <div className="font-mono font-extralight text-sm absolute top-8 hover-scale transition-all duration-300" style={{left: '117px', zIndex: 20}}>xcuxion</div>
-           <nav 
-             className="absolute flex space-x-6 text-xs text-gray-600"
-             style={{
-               width: '423px',
-               height: '20px',
-               top: '31.89px',
-               left: '300px',
-               zIndex: 20
-             }}
-           >
-             <button onClick={() => scrollToSection('home')} className="font-semibold hover:text-gray-800 transition-all duration-300 hover:scale-110">Home</button>
-             <button onClick={() => scrollToSection('services')} className="hover:text-gray-800 transition-all duration-300 hover:scale-110">Services</button>
-             <button onClick={() => scrollToSection('contact')} className="hover:text-gray-800 transition-all duration-300 hover:scale-110">Contact</button>
-             <button onClick={() => scrollToSection('faq')} className="hover:text-gray-800 transition-all duration-300 hover:scale-110">FAQ</button>
-           </nav>
-         </div>
+      <Header 
+        isLoaded={isLoaded}
+        isMobileMenuOpen={isMobileMenuOpen}
+        toggleMobileMenu={toggleMobileMenu}
+        scrollToSection={scrollToSection}
+      />
 
-         {/* Mobile Header - visible only on mobile */}
-         <div className="lg:hidden relative py-4 px-4 bg-white shadow-sm">
-           <div className="flex items-center justify-between">
-             {/* Logo */}
-             <div className="font-mono font-extralight text-lg font-bold text-gray-900 animate-fade-in-left">
-               xcuxion
-             </div>
-             
-             {/* Mobile Menu Button */}
-             <button
-               onClick={toggleMobileMenu}
-               className="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300 hover:scale-110 animate-fade-in-right"
-               aria-label="Toggle menu"
-             >
-               <svg className="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                 {isMobileMenuOpen ? (
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                 ) : (
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                 )}
-               </svg>
-             </button>
-           </div>
-           
-           {/* Mobile Navigation Menu */}
-           {isMobileMenuOpen && (
-             <div className="mt-4 pb-4 border-t border-gray-200 animate-fade-in-up">
-               <nav className="flex flex-col space-y-3 mt-4">
-                 <button onClick={() => scrollToSection('home')} className="text-left py-2 px-4 text-sm font-semibold text-gray-900 hover:bg-gray-100 rounded-md transition-all duration-300 hover:translate-x-2">Home</button>
-                 <button onClick={() => scrollToSection('services')} className="text-left py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded-md transition-all duration-300 hover:translate-x-2">Services</button>
-                 <button onClick={() => scrollToSection('contact')} className="text-left py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded-md transition-all duration-300 hover:translate-x-2">Contact</button>
-                 <button onClick={() => scrollToSection('faq')} className="text-left py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded-md transition-all duration-300 hover:translate-x-2">FAQ</button>
-        </nav>
-             </div>
-           )}
-         </div>
-      </header>
+      <Hero 
+        isLoaded={isLoaded}
+        scrollToSection={scrollToSection}
+      />
 
-      {/* Hero Section */}
-      <section
-        id="home"
-         className="relative w-full overflow-hidden min-h-[443px] lg:mt-2"
-       >
-         {/* Desktop Hero Layout - hidden on mobile */}
-         <div className="hidden lg:block">
-           {/* Top chip image */}
-           <img
-             src="/images/top chip.png"
-             alt="Top chip"
-             className={`absolute top-32 left-4 sm:left-8 lg:left-16 xl:left-28 w-48 h-auto z-4 ${isLoaded ? 'animate-fade-in-left' : 'opacity-0'}`}
-           />
-           
-           <div 
-             className={`absolute top-36 left-4 sm:left-8 lg:left-16 xl:left-28 z-10 max-w-2xl ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}
-             style={{ animationDelay: '0.2s' }}
-           >
-          <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2">
-            From Idea to Impact! <br /> Your Technology Partner
-          </h1>
-          <p className="text-sm text-gray-600 mb-4">
-               From initial concept to market launch, we provide the expertise to
-               bring your tech vision to life.<br />
-               We navigate the complexities of technology and business, so you can focus on achieving your goals.
-             </p>
-           </div>
-           
-           {/* Button and Social Icons Container */}
-           <div 
-             className={`absolute top-80 left-4 sm:left-8 lg:left-16 xl:left-28 z-10 flex items-center flex-wrap gap-4 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}
-             style={{ animationDelay: '0.4s' }}
-           >
-             <button 
-               onClick={() => scrollToSection('services')}
-               className="bg-gray-900 text-white px-6 py-2 rounded text-sm font-semibold hover:bg-gray-800 transition-all duration-300 flex items-center space-x-2 min-w-max whitespace-nowrap hover-lift hover-glow"
-             >
-               <span>Learn more ➤</span>
-             </button>
-             
-             {/* Vertical separator line */}
-             <div className="mx-4 h-8 border-l-2 border-gray-600"></div>
-             
-             <div className="flex space-x-3 text-gray-600 text-lg">
-               <a href="#" aria-label="YouTube" className="hover:text-lime-500 transition-all duration-300 hover:scale-125 hover:-translate-y-1">
-                 <FaYoutube />
-               </a>
-               <a href="#" aria-label="LinkedIn" className="hover:text-lime-500 transition-all duration-300 hover:scale-125 hover:-translate-y-1">
-                 <FaLinkedinIn />
-               </a>
-               <a href="#" aria-label="Facebook" className="hover:text-lime-500 transition-all duration-300 hover:scale-125 hover:-translate-y-1">
-                 <FaFacebookF />
-               </a>
-               <a href="#" aria-label="Instagram" className="hover:text-lime-500 transition-all duration-300 hover:scale-125 hover:-translate-y-1">
-                 <FaInstagram />
-               </a>
-             </div>
-           </div>
-           
-           {/* Mask group - background layer */}
-           <img
-             src="/images/Mask group.png"
-             alt="Mask group background"
-             className={`absolute top-2 left-0 w-full h-full object-cover z-1 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}
-           />
-           
-           {/* Main hero image - Image1 */}
-           <img
-             src="/images/Final_Task_Image1.png"
-               alt="Technology concept illustration"
-             className={`absolute top-12 right-4 sm:right-8 lg:right-16 xl:right-20 w-56 sm:w-64 lg:w-72 xl:w-80 h-auto z-2 animate-float ${isLoaded ? 'animate-fade-in-right' : 'opacity-0'}`}
-             style={{ animationDelay: '0.6s' }}
-           />
-           
-           {/* Incuts overlay - top layer */}
-           <img
-             src="/images/incuts.png"
-             alt="Incuts overlay"
-             className={`absolute top-40 right-2 sm:right-4 lg:right-6 xl:right-8 w-80 sm:w-96 lg:w-[28rem] xl:w-[32rem] h-auto z-3 animate-pulse-slow ${isLoaded ? 'animate-fade-in-right' : 'opacity-0'}`}
-             style={{ animationDelay: '0.8s' }}
-           />
-         </div>
-
-         {/* Mobile Hero Layout - visible only on mobile */}
-         <div className="lg:hidden px-4 py-8 min-h-[500px] bg-gradient-to-br from-gray-50 to-gray-100">
-           <div className="flex flex-col items-start">
-             {/* Top chip image */}
-             <img
-               src="/images/top chip.png"
-               alt="Top chip"
-               className="w-32 h-auto mb-4 animate-fade-in-left"
-             />
-             
-             <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight mb-4 text-gray-900 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-               From Idea to Impact! <br /> Your Technology Partner
-             </h1>
-             
-             <p className="text-sm text-gray-600 mb-6 max-w-lg animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            From initial concept to market launch, we provide the expertise to
-            bring your tech vision to life. We navigate the complexities of
-            technology and business, so you can focus on achieving your goals.
-          </p>
-             
-             {/* Button and Social Icons Container */}
-             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-               <button 
-                 onClick={() => scrollToSection('services')}
-                 className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-all duration-300 flex items-center space-x-2 hover-lift hover-glow"
-               >
-                 <span>Learn more</span>
-                 <FaChevronRight size={12} />
-          </button>
-               
-               {/* Vertical separator line - hidden on mobile */}
-               <div className="hidden sm:block mx-4 h-8 border-l-2 border-gray-600"></div>
-               
-               <div className="flex space-x-4 text-gray-600 text-xl">
-                 <a href="#" aria-label="YouTube" className="hover:text-lime-500 transition-all duration-300 hover:scale-125 hover:-translate-y-1">
-                   <FaYoutube />
-                 </a>
-                 <a href="#" aria-label="LinkedIn" className="hover:text-lime-500 transition-all duration-300 hover:scale-125 hover:-translate-y-1">
-              <FaLinkedinIn />
-            </a>
-                 <a href="#" aria-label="Facebook" className="hover:text-lime-500 transition-all duration-300 hover:scale-125 hover:-translate-y-1">
-                   <FaFacebookF />
-            </a>
-                 <a href="#" aria-label="Instagram" className="hover:text-lime-500 transition-all duration-300 hover:scale-125 hover:-translate-y-1">
-              <FaInstagram />
-            </a>
-          </div>
-        </div>
-             
-             {/* Hero images for mobile */}
-             <div className="relative w-full flex justify-center animate-fade-in-right" style={{ animationDelay: '0.8s' }}>
-          <img
-                 src="/images/Final_Task_Image1.png"
-            alt="Technology concept illustration"
-                 className="w-64 h-auto relative z-2 animate-float"
-               />
-               <img
-                 src="/images/incuts.png"
-                 alt="Incuts overlay"
-                 className="absolute top-4 -right-4 w-72 h-auto z-3 opacity-80 animate-pulse-slow"
-               />
-          </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section
-        id="services"
-         className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8 reveal"
-       >
-          <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
-            <img
-              src="/images/top chip service.png"
-              alt="Services"
-              className="w-32 sm:w-40 h-auto"
-            />
-        </div>
-          <h2 className="text-center text-xl sm:text-2xl font-bold mb-8 sm:mb-12">What we do</h2>
-          
-          {/* Desktop Services Layout - hidden on mobile */}
-          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm text-gray-700">
-          <div className="flex space-x-4">
-              <div className="mt-1">
-                <img
-                  src="/images/Group 1.png"
-                  alt="Service icon"
-                  className="object-contain flex-shrink-0"
-                  style={{
-                    width: '199px',
-                    height: '143px',
-                    marginTop: '-50px'
-                  }}
-                />
-            </div>
-            <div>
-                <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
-              <p>
-                Sit amet consectetur adipisicing elit. Maxime mollitia,
-                molestiae quas vel sint commodi repudiandae consequuntur
-                voluptatum laborum numquam blanditiis harum quisquam eius sed
-                odit fugiat iusto fuga praesentium.
-              </p>
-            </div>
-          </div>
-            <div className="flex space-x-4 p-6 bg-lime-50 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)', marginTop: '-20px'}}>
-              <div className="mt-1">
-                <img
-                  src="/images/Group 2.png"
-                  alt="Service icon"
-                  className="object-contain flex-shrink-0"
-                  style={{
-                    width: '250px',
-                    height: '180px',
-                    marginTop: '-70px'
-                  }}
-                />
-            </div>
-            <div>
-                <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
-              <p>
-                Sit amet consectetur adipisicing elit. Maxime mollitia,
-                molestiae quas vel sint commodi repudiandae consequuntur
-                voluptatum laborum numquam blanditiis harum quisquam eius sed
-                odit fugiat iusto fuga praesentium.
-              </p>
-            </div>
-          </div>
-          <div className="flex space-x-4">
-              <div className="mt-1">
-                <img
-                  src="/images/Group 1.png"
-                  alt="Service icon"
-                  className="object-contain flex-shrink-0"
-                  style={{
-                    width: '199px',
-                    height: '143px',
-                    marginTop: '-50px'
-                  }}
-                />
-            </div>
-            <div>
-                <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
-              <p>
-                Sit amet consectetur adipisicing elit. Maxime mollitia,
-                molestiae quas vel sint commodi repudiandae consequuntur
-                voluptatum laborum numquam blanditiis harum quisquam eius sed
-                odit fugiat iusto fuga praesentium.
-              </p>
-            </div>
-          </div>
-        </div>
-
-         {/* Mobile Services Layout - visible only on mobile */}
-         <div className="lg:hidden space-y-6">
-           {/* Service Card 1 */}
-           <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4 p-4 rounded-lg hover:shadow-lg transition-all duration-300 hover-lift reveal">
-             <div className="flex-shrink-0">
-               <img
-                 src="/images/Group 1.png"
-                 alt="Service icon"
-                 className="w-16 h-16 sm:w-20 sm:h-20 object-contain hover-scale transition-transform duration-300"
-               />
-             </div>
-             <div>
-               <h3 className="font-semibold text-base sm:text-lg mb-2 text-gray-900">Lorem ipsum dolor</h3>
-               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                 Sit amet consectetur adipisicing elit. Maxime mollitia,
-                 molestiae quas vel sint commodi repudiandae consequuntur
-                 voluptatum laborum numquam.
-               </p>
-             </div>
-           </div>
-           
-           {/* Service Card 2 - Featured */}
-           <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4 p-4 sm:p-6 bg-lime-50 rounded-lg border border-lime-200 hover:shadow-lg transition-all duration-300 hover-lift hover-glow reveal">
-             <div className="flex-shrink-0">
-               <img
-                 src="/images/Group 2.png"
-                 alt="Service icon"
-                 className="w-16 h-16 sm:w-20 sm:h-20 object-contain hover-scale transition-transform duration-300"
-               />
-             </div>
-             <div>
-               <h3 className="font-semibold text-base sm:text-lg mb-2 text-gray-900">Lorem ipsum dolor</h3>
-               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                 Sit amet consectetur adipisicing elit. Maxime mollitia,
-                 molestiae quas vel sint commodi repudiandae consequuntur
-                 voluptatum laborum numquam.
-               </p>
-             </div>
-           </div>
-
-           {/* Service Card 3 */}
-           <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4 p-4 rounded-lg hover:shadow-lg transition-all duration-300 hover-lift reveal">
-             <div className="flex-shrink-0">
-               <img
-                 src="/images/Group 1.png"
-                 alt="Service icon"
-                 className="w-16 h-16 sm:w-20 sm:h-20 object-contain hover-scale transition-transform duration-300"
-               />
-             </div>
-             <div>
-               <h3 className="font-semibold text-base sm:text-lg mb-2 text-gray-900">Lorem ipsum dolor</h3>
-               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                 Sit amet consectetur adipisicing elit. Maxime mollitia,
-                 molestiae quas vel sint commodi repudiandae consequuntur
-                 voluptatum laborum numquam.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Services />
 
       {/* Working Process Section */}
        <section className="w-full py-12 sm:py-16 bg-gray-50 px-4 sm:px-6 lg:px-8 reveal">
@@ -568,21 +231,21 @@ function App() {
                  alt="Workflow"
                  className="w-40 h-auto"
                />
-             </div>
+          </div>
              <h2 className="text-3xl font-extrabold mb-4">
-               Tech startups incubation and acceleration
-             </h2>
+            Tech startups incubation and acceleration
+          </h2>
              <p className="text-sm text-gray-600 mb-6">
-               Ready to take your tech startup to the next level? Apply to our
-               incubation and acceleration programs today!
-             </p>
+            Ready to take your tech startup to the next level? Apply to our
+            incubation and acceleration programs today!
+          </p>
              <button 
                onClick={() => scrollToSection('contact')}
                className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-all duration-300 flex items-center space-x-2 hover-lift hover-glow animate-bounce-slow"
              >
                <span>Learn more ➤</span>
-             </button>
-           </div>
+          </button>
+        </div>
            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
              <img
                src="/images/right.png"
@@ -638,7 +301,7 @@ function App() {
              <div className="relative w-full lg:w-1/2">
                <img
                  src="/images/image.png"
-               alt="Tech journey concept"
+            alt="Tech journey concept"
                  className="w-full h-96 object-contain object-center relative z-10"
                  style={{
                    transform: 'rotate(0deg)',
@@ -808,7 +471,7 @@ function App() {
               </div>
            ))}
            </div>
-           </div>
+            </div>
            <div className="flex justify-center mt-8 space-x-2">
              {Array.from({ length: totalSlides }).map((_, index) => (
                <button
@@ -818,182 +481,16 @@ function App() {
                    index === currentSlide ? 'bg-lime-500' : 'bg-gray-300'
                  }`}
                />
-             ))}
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section
-        id="faq"
-         className="w-full py-12 sm:py-16 bg-gray-50 px-4 sm:px-6 lg:px-8 reveal"
-       >
-         <div className="max-w-7xl mx-auto">
-           <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
-             <div className="w-full lg:w-1/3 lg:pr-8">
-               <div className="flex items-center justify-start lg:justify-start justify-center">
-                 <img
-                   src="/images/top chip faq.png"
-                   alt="FAQ"
-                   className="w-32 sm:w-40 h-auto"
-                 />
-          </div>
-               <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-center lg:text-left">Frequently asked question</h2>
-               <ul className="text-sm text-gray-700 space-y-3 text-center lg:text-left">
-                 <li className="flex items-start justify-center lg:justify-start">
-                   <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                   Get Answers to Your Tech Startup Questions
-                 </li>
-                 <li className="flex items-start justify-center lg:justify-start">
-                   <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                   Explore Our FAQ to Learn More
-                 </li>
-          </ul>
-        </div>
-             <div className="w-full lg:w-2/3">
-          {[
-            {
-              question: "Lorem ipsum dolor",
-              answer:
-                "Sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium."
-            },
-            {
-              question: "Lorem ipsum dolor Lorem ipsum dolor",
-              answer: "Lorem ipsum dolor"
-            },
-            {
-              question: "Lorem ipsum dolor",
-              answer: "Lorem ipsum dolor"
-            },
-            {
-              question: "Lorem ipsum Lorem ipsum dolor",
-              answer: "Lorem ipsum dolor"
-            },
-            {
-              question: "Lorem ipsum dolor",
-              answer: "Lorem ipsum dolor"
-            }
-          ].map((faq, idx) => (
-            <div
-              key={idx}
-              className="border-b border-gray-300 py-4 cursor-pointer hover:bg-gray-100 transition-colors rounded px-2"
-              onClick={() => toggleFaq(idx)}
-            >
-              <div className="flex justify-between items-center">
-                <h3 className="font-semibold text-gray-800 text-sm">{faq.question}</h3>
-                <div className="w-6 h-6 rounded-full border border-gray-400 flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">{activeFaq === idx ? "-" : "+"}</span>
-                </div>
-              </div>
-              {activeFaq === idx && (
-                <p className="mt-3 text-sm text-gray-600">{faq.answer}</p>
-              )}
-            </div>
           ))}
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section
-        id="contact"
-         className="w-full py-12 sm:py-16 bg-white px-4 sm:px-6 lg:px-8 reveal"
-       >
-         <div className="max-w-7xl mx-auto">
-           <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
-             <form className="w-full lg:w-2/5 space-y-4">
-               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                 <input
-                   type="text"
-                   placeholder="First name"
-                   className="flex-1 border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500 transition-all duration-300 hover:border-lime-300"
-                 />
-                 <input
-                   type="text"
-                   placeholder="Last name"
-                   className="flex-1 border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500 transition-all duration-300 hover:border-lime-300"
-                 />
-          </div>
-               <input
-                 type="email"
-                 placeholder="Email eg. princendjoh5@gmail.com"
-                 className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500 transition-all duration-300 hover:border-lime-300"
-               />
-               <input
-                 type="tel"
-                 placeholder="Phone eg. 0205358892"
-                 className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500 transition-all duration-300 hover:border-lime-300"
-               />
-               <textarea
-                 placeholder="Type message"
-                 rows={5}
-                 className="w-full border border-gray-300 rounded px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-lime-500 transition-all duration-300 hover:border-lime-300"
-               ></textarea>
-               <button
-                 type="submit"
-                 className="bg-gray-900 text-white px-12 py-4 rounded text-sm font-semibold hover:bg-gray-800 transition-all duration-300 w-full flex items-center justify-center space-x-2 hover-lift hover-glow"
-               >
-                 <span>Send ➤</span>
-               </button>
-        </form>
-             <div className="w-full lg:w-1/2 lg:pl-6">
-               <div className="flex items-center justify-start lg:justify-start justify-center">
-                 <img
-                   src="/images/top chip contact.png"
-                   alt="Contact"
-                   className="w-32 sm:w-40 h-auto"
-                 />
-               </div>
-               <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-center lg:text-left">
-              Connect with xcuxion, Let's Discuss Your Tech Startup Needs
-            </h2>
-               <p className="text-sm text-gray-600 text-center lg:text-left">
-            We're here to answer your questions and explore how we can help you
-            achieve your goals.
-          </p>
-             </div>
-           </div>
-        </div>
-      </section>
+      <FAQ activeFaq={activeFaq} toggleFaq={toggleFaq} />
 
-      {/* Footer */}
-       <footer className="w-full py-6 sm:py-8 bg-gray-50 px-4 sm:px-6 lg:px-8">
-         <div className="max-w-7xl mx-auto">
-           <div className="flex flex-col items-center justify-center space-y-4">
-             <div className="text-lg font-bold">xcuxion</div>
-             <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-8 text-sm text-gray-600">
-               <button onClick={() => scrollToSection('home')} className="hover:text-gray-800 transition-colors">
-                 Home
-               </button>
-               <button onClick={() => scrollToSection('services')} className="hover:text-gray-800 transition-colors">
-            Services
-               </button>
-               <button onClick={() => scrollToSection('contact')} className="hover:text-gray-800 transition-colors">
-            Contact
-               </button>
-               <button onClick={() => scrollToSection('faq')} className="hover:text-gray-800 transition-colors">
-            FAQ
-               </button>
-        </nav>
-             <div className="text-xs text-gray-600 font-bold text-center">© 2024 xcuxion, ALL RIGHTS RESERVED</div>
-             <div className="flex space-x-4 text-gray-600 text-lg">
-               <a href="#" aria-label="Facebook" className="hover:text-gray-800 transition-colors">
-            <FaFacebookF />
-          </a>
-               <a href="#" aria-label="LinkedIn" className="hover:text-gray-800 transition-colors">
-            <FaLinkedinIn />
-          </a>
-               <a href="#" aria-label="Twitter" className="hover:text-gray-800 transition-colors">
-            <FaTwitter />
-          </a>
-               <a href="#" aria-label="Instagram" className="hover:text-gray-800 transition-colors">
-            <FaInstagram />
-          </a>
-             </div>
-           </div>
+      <Contact />
+
+      <Footer scrollToSection={scrollToSection} />
         </div>
-      </footer>
-      </div>
     </div>
   );
 }
