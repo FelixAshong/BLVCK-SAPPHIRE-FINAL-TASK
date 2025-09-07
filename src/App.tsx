@@ -93,7 +93,7 @@ function App() {
       >
         {/* Top chip image */}
         <img
-          src="/src/assets/images/top chip.png"
+          src="/images/top chip.png"
           alt="Top chip"
           className="absolute top-32 left-4 sm:left-8 lg:left-16 xl:left-28 w-48 h-auto z-4"
         />
@@ -143,21 +143,21 @@ function App() {
         
         {/* Mask group - background layer */}
         <img
-          src="/src/assets/images/Mask group.png"
+          src="/images/Mask group.png"
           alt="Mask group background"
           className="absolute top-2 left-0 w-full h-full object-cover z-1"
         />
         
         {/* Main hero image - Image1 */}
         <img
-          src="/src/assets/images/Final_Task_Image1.png"
+          src="/images/Final_Task_Image1.png"
             alt="Technology concept illustration"
           className="absolute top-12 right-4 sm:right-8 lg:right-16 xl:right-20 w-56 sm:w-64 lg:w-72 xl:w-80 h-auto z-2"
         />
         
         {/* Incuts overlay - top layer */}
         <img
-          src="/src/assets/images/incuts.png"
+          src="/images/incuts.png"
           alt="Incuts overlay"
           className="absolute top-40 right-2 sm:right-4 lg:right-6 xl:right-8 w-80 sm:w-96 lg:w-[28rem] xl:w-[32rem] h-auto z-3"
         />
@@ -170,7 +170,7 @@ function App() {
       >
          <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
            <img
-             src="/src/assets/images/top chip service.png"
+             src="/images/top chip service.png"
              alt="Services"
              className="w-40 h-auto"
            />
