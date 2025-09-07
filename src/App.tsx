@@ -521,113 +521,206 @@ function App() {
         </div>
       </section>
 
-      {/* Incubation Section */}
-      <section className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div className="w-full lg:max-w-lg">
-          <div className="flex items-center space-x-2 text-xs text-gray-500">
+       {/* Incubation Section */}
+       <section className="w-full py-12 sm:py-16 bg-white px-4 sm:px-6 lg:px-8">
+         {/* Desktop Layout - hidden on mobile */}
+         <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between gap-8">
+           <div className="w-full lg:max-w-lg">
+             <div className="flex items-center space-x-2 text-xs text-gray-500">
+               <img
+                 src="/images/top chip WORKFLOW.png"
+                 alt="Workflow"
+                 className="w-40 h-auto"
+               />
+             </div>
+             <h2 className="text-3xl font-extrabold mb-4">
+               Tech startups incubation and acceleration
+             </h2>
+             <p className="text-sm text-gray-600 mb-6">
+               Ready to take your tech startup to the next level? Apply to our
+               incubation and acceleration programs today!
+             </p>
+             <button 
+               onClick={() => scrollToSection('contact')}
+               className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
+             >
+               <span>Learn more ➤</span>
+             </button>
+           </div>
             <img
-              src="/images/top chip WORKFLOW.png"
-              alt="Workflow"
-              className="w-40 h-auto"
-            />
-          </div>
-          <h2 className="text-3xl font-extrabold mb-4">
-            Tech startups incubation and acceleration
-          </h2>
-          <p className="text-sm text-gray-600 mb-6">
-            Ready to take your tech startup to the next level? Apply to our
-            incubation and acceleration programs today!
-          </p>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
-          >
-            <span>Learn more ➤</span>
-          </button>
-        </div>
-         <img
-           src="/images/right.png"
-           alt="Tech startup incubation illustration"
-           className="absolute"
-           style={{
-             width: '566px',
-             height: '355px',
-             top: '1175px',
-             left: '591px',
-             zIndex: 10
-           }}
-         />
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-2">
-          <div className="relative w-full lg:w-1/2">
-            {/* Background shapes */}
-            <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
-            <div className="absolute -bottom-6 -left-6 w-40 h-20 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
-            <img
-              src="/images/image.png"
-            alt="Tech journey concept"
-              className="w-full h-96 object-contain object-center relative z-10"
+              src="/images/right.png"
+              alt="Tech startup incubation illustration"
+              className="absolute"
               style={{
-                transform: 'rotate(0deg)',
-                opacity: 1
+                width: '566px',
+                height: '355px',
+                top: '1175px',
+                left: '591px',
+                zIndex: 10
               }}
             />
-        </div>
-        <div className="w-full lg:max-w-lg lg:ml-2">
-          <div className="flex items-center justify-start">
-            <img
-              src="/images/top chip choose.png"
-              alt="Why choose us"
-              className="w-40 h-auto"
-            />
-          </div>
-          <h2 className="text-3xl font-extrabold mb-4">
-            Launch Your Tech Journey with Confidence
-          </h2>
-          <p className="text-sm text-gray-600 mb-6">
-            Turn Your Tech Vision Into Reality. Choose XCUXION for Measurable
-            Success.
-          </p>
-          <div className="grid grid-cols-2 gap-3 mb-8">
-            <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
-              <span className="text-sm text-lime-800 font-medium">⦿ Proven track record</span>
-            </div>
-            <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
-              <span className="text-sm text-lime-800 font-medium">⦿ Network and resources</span>
-            </div>
-            <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
-              <span className="text-sm text-lime-800 font-medium">⦿ Scalability and Sustainability</span>
-            </div>
-            <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
-              <span className="text-sm text-lime-800 font-medium">⦿ Experienced Mentorship</span>
-            </div>
-          </div>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
-          >
-            <span>Learn more ➤</span>
-          </button>
-        </div>
-        </div>
-      </section>
+         </div>
 
-      {/* Reviews Section */}
-      <section className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center">
-          <img
-            src="/images/top chip WORKFLOW.png"
-            alt="Workflow"
-            className="w-40 h-auto"
-          />
-        </div>
-        <h2 className="text-center text-2xl font-bold mb-12">Check out recent reviews</h2>
-        <div className="relative overflow-hidden">
+         {/* Mobile Layout - visible only on mobile */}
+         <div className="lg:hidden max-w-7xl mx-auto">
+           <div className="text-center mb-8">
+             <div className="flex items-center justify-center mb-4">
+               <img
+                 src="/images/top chip WORKFLOW.png"
+                 alt="Workflow"
+                 className="w-32 h-auto"
+               />
+             </div>
+             <h2 className="text-2xl sm:text-3xl font-extrabold mb-4">
+               Tech startups incubation and acceleration
+             </h2>
+             <p className="text-sm text-gray-600 mb-6 max-w-lg mx-auto">
+               Ready to take your tech startup to the next level? Apply to our
+               incubation and acceleration programs today!
+             </p>
+           </div>
+           
+           <div className="flex justify-center mb-8">
+             <img
+               src="/images/right.png"
+               alt="Tech startup incubation illustration"
+               className="w-full max-w-md h-auto"
+             />
+           </div>
+           
+           <div className="text-center">
+             <button 
+               onClick={() => scrollToSection('contact')}
+               className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors"
+             >
+               Learn more ➤
+             </button>
+           </div>
+         </div>
+       </section>
+
+       {/* Features Section */}
+       <section className="w-full py-12 sm:py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
+         <div className="max-w-7xl mx-auto">
+           {/* Desktop Layout - hidden on mobile */}
+           <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between gap-2">
+             <div className="relative w-full lg:w-1/2">
+               {/* Background shapes */}
+               <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
+               <div className="absolute -bottom-6 -left-6 w-40 h-20 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
+               <img
+                 src="/images/image.png"
+               alt="Tech journey concept"
+                 className="w-full h-96 object-contain object-center relative z-10"
+                 style={{
+                   transform: 'rotate(0deg)',
+                   opacity: 1
+                 }}
+               />
+             </div>
+             <div className="w-full lg:max-w-lg lg:ml-2">
+               <div className="flex items-center justify-start">
+                 <img
+                   src="/images/top chip choose.png"
+                   alt="Why choose us"
+                   className="w-40 h-auto"
+                 />
+               </div>
+               <h2 className="text-3xl font-extrabold mb-4">
+                 Launch Your Tech Journey with Confidence
+               </h2>
+               <p className="text-sm text-gray-600 mb-6">
+                 Turn Your Tech Vision Into Reality. Choose XCUXION for Measurable
+                 Success.
+               </p>
+               <div className="grid grid-cols-2 gap-3 mb-8">
+                 <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+                   <span className="text-sm text-lime-800 font-medium">⦿ Proven track record</span>
+                 </div>
+                 <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+                   <span className="text-sm text-lime-800 font-medium">⦿ Network and resources</span>
+                 </div>
+                 <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+                   <span className="text-sm text-lime-800 font-medium">⦿ Scalability and Sustainability</span>
+                 </div>
+                 <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+                   <span className="text-sm text-lime-800 font-medium">⦿ Experienced Mentorship</span>
+                 </div>
+               </div>
+               <button 
+                 onClick={() => scrollToSection('contact')}
+                 className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
+               >
+                 <span>Learn more ➤</span>
+               </button>
+             </div>
+           </div>
+
+           {/* Mobile Layout - visible only on mobile */}
+           <div className="lg:hidden">
+             <div className="text-center mb-8">
+               <div className="flex items-center justify-center mb-4">
+                 <img
+                   src="/images/top chip choose.png"
+                   alt="Why choose us"
+                   className="w-32 h-auto"
+                 />
+               </div>
+               <h2 className="text-2xl sm:text-3xl font-extrabold mb-4">
+                 Launch Your Tech Journey with Confidence
+               </h2>
+               <p className="text-sm text-gray-600 mb-6 max-w-lg mx-auto">
+                 Turn Your Tech Vision Into Reality. Choose XCUXION for Measurable
+                 Success.
+               </p>
+             </div>
+
+             <div className="flex justify-center mb-8">
+               <img
+                 src="/images/image.png"
+                 alt="Tech journey concept"
+                 className="w-full max-w-sm h-auto"
+               />
+             </div>
+
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+               <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+                 <span className="text-sm text-lime-800 font-medium">⦿ Proven track record</span>
+               </div>
+               <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+                 <span className="text-sm text-lime-800 font-medium">⦿ Network and resources</span>
+               </div>
+               <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+                 <span className="text-sm text-lime-800 font-medium">⦿ Scalability and Sustainability</span>
+               </div>
+               <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+                 <span className="text-sm text-lime-800 font-medium">⦿ Experienced Mentorship</span>
+               </div>
+             </div>
+
+             <div className="text-center">
+               <button 
+                 onClick={() => scrollToSection('contact')}
+                 className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors"
+               >
+                 Learn more ➤
+               </button>
+             </div>
+           </div>
+         </div>
+       </section>
+
+       {/* Reviews Section */}
+       <section className="w-full py-12 sm:py-16 bg-white px-4 sm:px-6 lg:px-8">
+           <div className="flex items-center justify-center">
+             <img
+               src="/images/top chip WORKFLOW.png"
+               alt="Workflow"
+               className="w-32 sm:w-40 h-auto"
+             />
+           </div>
+           <h2 className="text-center text-xl sm:text-2xl font-bold mb-8 sm:mb-12">Check out recent reviews</h2>
+           <div className="relative overflow-hidden">
           <div 
             className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -685,49 +778,50 @@ function App() {
           ))}
         </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="flex justify-center mt-8 space-x-2">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                index === currentSlide ? 'bg-lime-500' : 'bg-gray-300'
-              }`}
-            />
-          ))}
-        </div>
-      </section>
+           ))}
+           </div>
+           </div>
+           <div className="flex justify-center mt-8 space-x-2">
+             {Array.from({ length: totalSlides }).map((_, index) => (
+               <button
+                 key={index}
+                 onClick={() => setCurrentSlide(index)}
+                 className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                   index === currentSlide ? 'bg-lime-500' : 'bg-gray-300'
+                 }`}
+               />
+             ))}
+           </div>
+       </section>
 
-      {/* FAQ Section */}
-      <section
-        id="faq"
-        className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8"
-      >
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
-        <div className="w-full lg:w-1/3 lg:pr-8">
-          <div className="flex items-center justify-start">
-            <img
-              src="/images/top chip faq.png"
-              alt="FAQ"
-              className="w-40 h-auto"
-            />
-          </div>
-          <h2 className="text-3xl font-extrabold mb-4">Frequently asked question</h2>
-          <ul className="text-sm text-gray-700 space-y-3">
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Get Answers to Your Tech Startup Questions
-            </li>
-            <li className="flex items-start">
-              <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-              Explore Our FAQ to Learn More
-            </li>
-          </ul>
-        </div>
-        <div className="w-full lg:w-2/3">
+       {/* FAQ Section */}
+       <section
+         id="faq"
+         className="w-full py-12 sm:py-16 bg-gray-50 px-4 sm:px-6 lg:px-8"
+       >
+         <div className="max-w-7xl mx-auto">
+           <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+             <div className="w-full lg:w-1/3 lg:pr-8">
+               <div className="flex items-center justify-start lg:justify-start justify-center">
+                 <img
+                   src="/images/top chip faq.png"
+                   alt="FAQ"
+                   className="w-32 sm:w-40 h-auto"
+                 />
+               </div>
+               <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-center lg:text-left">Frequently asked question</h2>
+               <ul className="text-sm text-gray-700 space-y-3 text-center lg:text-left">
+                 <li className="flex items-start justify-center lg:justify-start">
+                   <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                   Get Answers to Your Tech Startup Questions
+                 </li>
+                 <li className="flex items-start justify-center lg:justify-start">
+                   <span className="w-2 h-2 bg-gray-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                   Explore Our FAQ to Learn More
+                 </li>
+               </ul>
+             </div>
+             <div className="w-full lg:w-2/3">
           {[
             {
               question: "Lorem ipsum dolor",
@@ -767,105 +861,110 @@ function App() {
               )}
             </div>
           ))}
-        </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section
-        id="contact"
-        className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8"
-      >
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
-        <form className="w-full lg:w-2/5 space-y-4">
-          <div className="flex space-x-4">
-            <input
-              type="text"
-              placeholder="First name"
-              className="flex-1 border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
-            />
-            <input
-              type="text"
-              placeholder="Last name"
-              className="flex-1 border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
-            />
-          </div>
-          <input
-            type="email"
-            placeholder="Email eg. princendjoh5@gmail.com"
-            className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
-          />
-          <input
-            type="tel"
-            placeholder="Phone eg. 0205358892"
-            className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
-          />
-          <textarea
-            placeholder="Type message"
-            rows={5}
-            className="w-full border border-gray-300 rounded px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-lime-500"
-          ></textarea>
-          <button
-            type="submit"
-            className="bg-gray-900 text-white px-12 py-4 rounded text-sm font-semibold hover:bg-gray-800 transition-colors w-full flex items-center justify-center space-x-2"
-          >
-            <span>Send ➤</span>
-          </button>
-        </form>
-        <div className="w-full lg:w-1/2 lg:pl-6">
-          <div className="flex items-center justify-start">
-            <img
-              src="/images/top chip contact.png"
-              alt="Contact"
-              className="w-40 h-auto"
-            />
-          </div>
-          <h2 className="text-3xl font-extrabold mb-4">
-            Connect with xcuxion, Let's Discuss Your Tech Startup Needs
-          </h2>
-          <p className="text-sm text-gray-600">
-            We're here to answer your questions and explore how we can help you
-            achieve your goals.
-          </p>
-        </div>
-        </div>
-      </section>
+       {/* Contact Section */}
+       <section
+         id="contact"
+         className="w-full py-12 sm:py-16 bg-white px-4 sm:px-6 lg:px-8"
+       >
+         <div className="max-w-7xl mx-auto">
+           <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+             <form className="w-full lg:w-2/5 space-y-4">
+               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                 <input
+                   type="text"
+                   placeholder="First name"
+                   className="flex-1 border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
+                 />
+                 <input
+                   type="text"
+                   placeholder="Last name"
+                   className="flex-1 border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
+                 />
+               </div>
+               <input
+                 type="email"
+                 placeholder="Email eg. princendjoh5@gmail.com"
+                 className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
+               />
+               <input
+                 type="tel"
+                 placeholder="Phone eg. 0205358892"
+                 className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
+               />
+               <textarea
+                 placeholder="Type message"
+                 rows={5}
+                 className="w-full border border-gray-300 rounded px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-lime-500"
+               ></textarea>
+               <button
+                 type="submit"
+                 className="bg-gray-900 text-white px-12 py-4 rounded text-sm font-semibold hover:bg-gray-800 transition-colors w-full flex items-center justify-center space-x-2"
+               >
+                 <span>Send ➤</span>
+               </button>
+             </form>
+             <div className="w-full lg:w-1/2 lg:pl-6">
+               <div className="flex items-center justify-start lg:justify-start justify-center">
+                 <img
+                   src="/images/top chip contact.png"
+                   alt="Contact"
+                   className="w-32 sm:w-40 h-auto"
+                 />
+               </div>
+               <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-center lg:text-left">
+                 Connect with xcuxion, Let's Discuss Your Tech Startup Needs
+               </h2>
+               <p className="text-sm text-gray-600 text-center lg:text-left">
+                 We're here to answer your questions and explore how we can help you
+                 achieve your goals.
+               </p>
+             </div>
+           </div>
+         </div>
+       </section>
 
-      {/* Footer */}
-      <footer className="w-full py-8 bg-gray-50 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="text-lg font-bold">xcuxion</div>
-          <nav className="flex space-x-8 text-sm text-gray-600">
-          <button onClick={() => scrollToSection('home')} className="hover:text-gray-800 transition-colors">
-            Home
-          </button>
-          <button onClick={() => scrollToSection('services')} className="hover:text-gray-800 transition-colors">
-            Services
-          </button>
-          <button onClick={() => scrollToSection('contact')} className="hover:text-gray-800 transition-colors">
-            Contact
-          </button>
-          <button onClick={() => scrollToSection('faq')} className="hover:text-gray-800 transition-colors">
-            FAQ
-          </button>
-        </nav>
-          <div className="text-xs text-gray-600 font-bold">© 2024 xcuxion, ALL RIGHTS RESERVED</div>
-          <div className="flex space-x-4 text-gray-600 text-lg">
-            <a href="#" aria-label="Facebook" className="hover:text-gray-800 transition-colors">
-            <FaFacebookF />
-          </a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-gray-800 transition-colors">
-            <FaLinkedinIn />
-          </a>
-            <a href="#" aria-label="Twitter" className="hover:text-gray-800 transition-colors">
-            <FaTwitter />
-          </a>
-            <a href="#" aria-label="Instagram" className="hover:text-gray-800 transition-colors">
-            <FaInstagram />
-          </a>
-          </div>
-        </div>
-      </footer>
+       {/* Footer */}
+       <footer className="w-full py-6 sm:py-8 bg-gray-50 px-4 sm:px-6 lg:px-8">
+         <div className="max-w-7xl mx-auto">
+           <div className="flex flex-col items-center justify-center space-y-4">
+             <div className="text-lg font-bold">xcuxion</div>
+             <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-8 text-sm text-gray-600">
+               <button onClick={() => scrollToSection('home')} className="hover:text-gray-800 transition-colors">
+                 Home
+               </button>
+               <button onClick={() => scrollToSection('services')} className="hover:text-gray-800 transition-colors">
+                 Services
+               </button>
+               <button onClick={() => scrollToSection('contact')} className="hover:text-gray-800 transition-colors">
+                 Contact
+               </button>
+               <button onClick={() => scrollToSection('faq')} className="hover:text-gray-800 transition-colors">
+                 FAQ
+               </button>
+             </nav>
+             <div className="text-xs text-gray-600 font-bold text-center">© 2024 xcuxion, ALL RIGHTS RESERVED</div>
+             <div className="flex space-x-4 text-gray-600 text-lg">
+               <a href="#" aria-label="Facebook" className="hover:text-gray-800 transition-colors">
+                 <FaFacebookF />
+               </a>
+               <a href="#" aria-label="LinkedIn" className="hover:text-gray-800 transition-colors">
+                 <FaLinkedinIn />
+               </a>
+               <a href="#" aria-label="Twitter" className="hover:text-gray-800 transition-colors">
+                 <FaTwitter />
+               </a>
+               <a href="#" aria-label="Instagram" className="hover:text-gray-800 transition-colors">
+                 <FaInstagram />
+               </a>
+             </div>
+           </div>
+         </div>
+       </footer>
       </div>
     </div>
   );
