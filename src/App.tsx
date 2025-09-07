@@ -95,7 +95,7 @@ function App() {
         <img
           src="/src/assets/images/top chip.png"
           alt="Top chip"
-          className="absolute top-32 left-4 sm:left-8 lg:left-14 xl:left-20 w-40 h-auto z-4"
+          className="absolute top-32 left-4 sm:left-8 lg:left-16 xl:left-28 w-48 h-auto z-4"
         />
         
         <div 
