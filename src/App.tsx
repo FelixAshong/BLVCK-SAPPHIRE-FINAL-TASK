@@ -225,7 +225,7 @@ function App() {
 
       {/* Working Process Section */}
       <section className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-8">
+        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
           <img
             src="/src/assets/images/top chip workflow.png"
             alt="Workflow"
@@ -233,41 +233,56 @@ function App() {
           />
         </div>
         <h2 className="text-center text-2xl font-bold mb-12">Our working process</h2>
-        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8">
+        <div className="flex justify-center items-center space-x-8">
           {/* Each step */}
           <div className="flex flex-col items-center space-y-3">
-            <div className="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center text-white">
-              <FaClipboardCheck size={20} />
+            <div className="w-16 h-16 rounded-full border-2 border-gray-400 flex items-center justify-center">
+              <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
-            <span className="text-sm font-medium">Planning</span>
+            <span className="text-sm font-medium text-gray-600">Planning</span>
           </div>
-          <div className="w-8 h-0.5 bg-gray-300 border-dashed border-t-2"></div>
+          <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
           <div className="flex flex-col items-center space-y-3">
-            <div className="w-16 h-16 rounded-full border-2 border-lime-500 flex items-center justify-center text-lime-500">
-              <FaClipboardCheck size={20} />
+            <div className="w-16 h-16 rounded-full border-2 border-lime-500 flex items-center justify-center">
+              <svg className="w-8 h-8 text-lime-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
             <span className="text-sm font-medium text-lime-500">Analysis</span>
           </div>
-          <div className="w-8 h-0.5 bg-gray-300 border-dashed border-t-2"></div>
+          <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
           <div className="flex flex-col items-center space-y-3">
-            <div className="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center text-white">
-              <FaClipboardCheck size={20} />
+            <div className="w-16 h-16 rounded-full border-2 border-gray-400 flex items-center justify-center">
+              <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
-            <span className="text-sm font-medium">Design</span>
+            <span className="text-sm font-medium text-gray-600">Design</span>
           </div>
-          <div className="w-8 h-0.5 bg-gray-300 border-dashed border-t-2"></div>
+          <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
           <div className="flex flex-col items-center space-y-3">
-            <div className="w-16 h-16 rounded-full border-2 border-lime-500 flex items-center justify-center text-lime-500">
-              <FaClipboardCheck size={20} />
+            <div className="w-16 h-16 rounded-full border-2 border-lime-500 flex items-center justify-center">
+              <svg className="w-8 h-8 text-lime-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
             <span className="text-sm font-medium text-lime-500">Development</span>
           </div>
-          <div className="w-8 h-0.5 bg-gray-300 border-dashed border-t-2"></div>
+          <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
           <div className="flex flex-col items-center space-y-3">
-            <div className="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center text-white">
-              <FaClipboardCheck size={20} />
+            <div className="w-16 h-16 rounded-full border-2 border-gray-400 flex items-center justify-center">
+              <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
-            <span className="text-sm font-medium">Maintenance</span>
+            <span className="text-sm font-medium text-gray-600">Maintenance</span>
           </div>
         </div>
       </section>
