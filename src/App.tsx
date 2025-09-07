@@ -560,41 +560,36 @@ function App() {
       {/* Incubation Section */}
        <section className="w-full py-12 sm:py-16 bg-white px-4 sm:px-6 lg:px-8 reveal">
          {/* Desktop Layout - hidden on mobile */}
-         <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between gap-8">
-           <div className="w-full lg:max-w-lg">
+         <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between gap-8 max-w-7xl mx-auto">
+           <div className="w-full lg:w-1/2 lg:max-w-lg">
              <div className="flex items-center space-x-2 text-xs text-gray-500">
                <img
                  src="/images/top chip WORKFLOW.png"
                  alt="Workflow"
                  className="w-40 h-auto"
                />
-          </div>
+             </div>
              <h2 className="text-3xl font-extrabold mb-4">
-            Tech startups incubation and acceleration
-          </h2>
+               Tech startups incubation and acceleration
+             </h2>
              <p className="text-sm text-gray-600 mb-6">
-            Ready to take your tech startup to the next level? Apply to our
-            incubation and acceleration programs today!
-          </p>
+               Ready to take your tech startup to the next level? Apply to our
+               incubation and acceleration programs today!
+             </p>
              <button 
                onClick={() => scrollToSection('contact')}
                className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-all duration-300 flex items-center space-x-2 hover-lift hover-glow animate-bounce-slow"
              >
                <span>Learn more ➤</span>
-          </button>
-        </div>
-            <img
-              src="/images/right.png"
-              alt="Tech startup incubation illustration"
-              className="absolute"
-              style={{
-                width: '566px',
-                height: '355px',
-                top: '1175px',
-                left: '591px',
-                zIndex: 10
-              }}
-            />
+             </button>
+           </div>
+           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+             <img
+               src="/images/right.png"
+               alt="Tech startup incubation illustration"
+               className="w-full max-w-lg h-auto animate-float hover-scale transition-transform duration-300"
+             />
+           </div>
          </div>
 
          {/* Mobile Layout - visible only on mobile */}
