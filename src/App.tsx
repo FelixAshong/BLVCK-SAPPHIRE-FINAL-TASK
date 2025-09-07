@@ -180,7 +180,7 @@ function App() {
           <div className="flex space-x-4">
              <div className="mt-1">
                <img
-                 src="/src/assets/images/group 1.png"
+                 src="/images/Group 1.png"
                  alt="Service icon"
                  className="object-contain flex-shrink-0"
                  style={{
@@ -203,7 +203,7 @@ function App() {
            <div className="flex space-x-4 p-6 bg-lime-50 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)', marginTop: '-20px'}}>
              <div className="mt-1">
                <img
-                 src="/src/assets/images/group 2.png"
+                 src="/images/Group 2.png"
                  alt="Service icon"
                  className="object-contain flex-shrink-0"
                  style={{
@@ -226,7 +226,7 @@ function App() {
           <div className="flex space-x-4">
              <div className="mt-1">
                <img
-                 src="/src/assets/images/group 1.png"
+                 src="/images/Group 1.png"
                  alt="Service icon"
                  className="object-contain flex-shrink-0"
                  style={{
@@ -253,7 +253,7 @@ function App() {
       <section className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
           <img
-            src="/src/assets/images/top chip workflow.png"
+            src="/images/top chip WORKFLOW.png"
             alt="Workflow"
             className="w-40 h-auto"
           />
@@ -319,7 +319,7 @@ function App() {
         <div className="w-full lg:max-w-lg">
           <div className="flex items-center space-x-2 text-xs text-gray-500">
             <img
-              src="/src/assets/images/top chip workflow.png"
+              src="/images/top chip WORKFLOW.png"
               alt="Workflow"
               className="w-40 h-auto"
             />
@@ -339,7 +339,7 @@ function App() {
           </button>
         </div>
          <img
-           src="/src/assets/images/right.png"
+           src="/images/right.png"
            alt="Tech startup incubation illustration"
            className="absolute"
            style={{
@@ -361,7 +361,7 @@ function App() {
             <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
             <div className="absolute -bottom-6 -left-6 w-40 h-20 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
             <img
-              src="/src/assets/images/image.png"
+              src="/images/image.png"
             alt="Tech journey concept"
               className="w-full h-96 object-contain object-center relative z-10"
               style={{
@@ -373,7 +373,7 @@ function App() {
         <div className="w-full lg:max-w-lg lg:ml-2">
           <div className="flex items-center justify-start">
             <img
-              src="/src/assets/images/top chip choose.png"
+              src="/images/top chip choose.png"
               alt="Why choose us"
               className="w-40 h-auto"
             />
@@ -413,7 +413,7 @@ function App() {
       <section className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center">
           <img
-            src="/src/assets/images/top chip workflow.png"
+            src="/images/top chip WORKFLOW.png"
             alt="Workflow"
             className="w-40 h-auto"
           />
@@ -434,7 +434,7 @@ function App() {
                     >
                       <div className="flex items-center space-x-3 mb-4">
                         <img
-                          src="src/assets/images/Final Task_image3.jpeg"
+                          src="/images/Final Task_image3.jpeg"
                   alt="Reviewer avatar"
                           className="rounded-full w-12 h-12 object-cover"
                 />
@@ -502,7 +502,7 @@ function App() {
         <div className="w-full lg:w-1/3 lg:pr-8">
           <div className="flex items-center justify-start">
             <img
-              src="/src/assets/images/top chip faq.png"
+              src="/images/top chip faq.png"
               alt="FAQ"
               className="w-40 h-auto"
             />
@@ -607,7 +607,7 @@ function App() {
         <div className="w-full lg:w-1/2 lg:pl-6">
           <div className="flex items-center justify-start">
             <img
-              src="/src/assets/images/top chip contact.png"
+              src="/images/top chip contact.png"
               alt="Contact"
               className="w-40 h-auto"
             />
