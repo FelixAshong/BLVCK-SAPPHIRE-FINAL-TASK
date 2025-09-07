@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaHome,
   FaServicestack,
@@ -24,6 +24,9 @@ import {
 function App() {
   // FAQ accordion state
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  
+  // Reviews carousel state
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -35,6 +38,30 @@ function App() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // Review data
+  const reviews = [
+    { name: "Prince Nodjon", role: "Software Developer", text: "Sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur" },
+    { name: "Sarah Johnson", role: "Product Manager", text: "Outstanding service and support! The team helped us scale our startup from idea to market leader in just 18 months." },
+    { name: "Mike Chen", role: "Tech Founder", text: "The mentorship and resources provided were invaluable. They truly understand the startup ecosystem and challenges." },
+    { name: "Emily Davis", role: "CTO", text: "Professional, knowledgeable, and results-driven. Highly recommend for any tech startup looking to accelerate growth." },
+    { name: "Alex Rodriguez", role: "CEO", text: "Game-changing experience! Their network and expertise opened doors we never thought possible for our company." },
+    { name: "Lisa Wang", role: "Lead Developer", text: "Incredible support throughout our journey. The team's dedication to our success was evident from day one." },
+    { name: "David Thompson", role: "Startup Founder", text: "The acceleration program exceeded all expectations. From concept to launch, their guidance was instrumental to our success." },
+    { name: "Maria Garcia", role: "Data Scientist", text: "Exceptional mentorship and resources. The network connections alone were worth the entire program experience." },
+    { name: "James Wilson", role: "VP Engineering", text: "World-class incubation services. They helped us avoid common pitfalls and accelerated our growth beyond imagination." }
+  ];
+
+  const totalSlides = Math.ceil(reviews.length / 3);
+
+  // Auto-slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [totalSlides]);
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
@@ -390,61 +417,77 @@ function App() {
           />
         </div>
         <h2 className="text-center text-2xl font-bold mb-12">Check out recent reviews</h2>
-        <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8">
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="bg-white rounded-lg shadow-lg p-6 max-w-xs flex flex-col border border-gray-100"
-            >
-              <div className="flex items-center space-x-3 mb-4">
-                <img
-                  src="src/assets/images/Final Task_image3.jpeg"
-                  alt="Reviewer avatar"
-                  className="rounded-full w-12 h-12 object-cover"
-                />
-                <div>
-                  <p className="font-semibold text-sm">Prince Nodjon</p>
-                  <p className="text-xs text-gray-500">Software Developer</p>
+        <div className="relative overflow-hidden">
+          <div 
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+              <div key={slideIndex} className="w-full flex-shrink-0">
+                <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8">
+                  {reviews.slice(slideIndex * 3, slideIndex * 3 + 3).map((review, reviewIndex) => (
+                    <div
+                      key={slideIndex * 3 + reviewIndex}
+                      className="bg-white rounded-lg shadow-lg p-6 max-w-xs flex flex-col border border-gray-100"
+                    >
+                      <div className="flex items-center space-x-3 mb-4">
+                        <img
+                          src="src/assets/images/Final Task_image3.jpeg"
+                          alt="Reviewer avatar"
+                          className="rounded-full w-12 h-12 object-cover"
+                        />
+                        <div>
+                          <p className="font-semibold text-sm">{review.name}</p>
+                          <p className="text-xs text-gray-500">{review.role}</p>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-700 mb-4 flex-grow">
+                        {review.text}
+                      </p>
+                      <div className="flex space-x-1">
+                        {[...Array(4)].map((_, idx) => (
+                          <svg
+                            key={idx}
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            className="w-4 h-4 text-yellow-400"
+                          >
+                            <path
+                              d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.287 3.974c.3.922-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.175 0l-3.388 2.462c-.784.57-1.838-.196-1.539-1.118l1.287-3.974a1 1 0 00-.364-1.118L2.045 9.4c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
+                            />
+                          </svg>
+                        ))}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          className="w-4 h-4 text-gray-300"
+                        >
+                          <path
+                            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.287 3.974c.3.922-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.175 0l-3.388 2.462c-.784.57-1.838-.196-1.539-1.118l1.287-3.974a1 1 0 00-.364-1.118L2.045 9.4c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <p className="text-sm text-gray-700 mb-4 flex-grow">
-                Sit amet consectetur adipisicing elit. Maxime mollitia,
-                molestiae quas vel sint commodi repudiandae consequuntur
-              </p>
-              <div className="flex space-x-1">
-                {[...Array(4)].map((_, idx) => (
-                  <svg
-                    key={idx}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4 text-yellow-400"
-                  >
-                    <path
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.287 3.974c.3.922-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.175 0l-3.388 2.462c-.784.57-1.838-.196-1.539-1.118l1.287-3.974a1 1 0 00-.364-1.118L2.045 9.4c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                    />
-                  </svg>
-                ))}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  className="w-4 h-4 text-gray-300"
-                >
-                  <path
-                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.287 3.974c.3.922-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.175 0l-3.388 2.462c-.784.57-1.838-.196-1.539-1.118l1.287-3.974a1 1 0 00-.364-1.118L2.045 9.4c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                  />
-                </svg>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <div className="flex justify-center mt-8 space-x-2">
-          <span className="w-3 h-3 rounded-full bg-lime-500"></span>
-          <span className="w-3 h-3 rounded-full bg-gray-300"></span>
-          <span className="w-3 h-3 rounded-full bg-gray-300"></span>
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                index === currentSlide ? 'bg-lime-500' : 'bg-gray-300'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -554,17 +597,18 @@ function App() {
           ></textarea>
           <button
             type="submit"
-            className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
+            className="bg-gray-900 text-white px-12 py-4 rounded text-sm font-semibold hover:bg-gray-800 transition-colors w-full flex items-center justify-center space-x-2"
           >
-            <span>Send</span>
-            <FaChevronRight size={12} />
+            <span>Send ➤</span>
           </button>
         </form>
         <div className="w-full lg:w-1/2 lg:pl-12">
-          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-4">
-            <div className="w-8 h-0.5 bg-gray-400"></div>
-            <FaEnvelope />
-            <span>Contact us</span>
+          <div className="flex items-center justify-start">
+            <img
+              src="/src/assets/images/top chip contact.png"
+              alt="Contact"
+              className="w-40 h-auto"
+            />
           </div>
           <h2 className="text-3xl font-extrabold mb-4">
             Connect with xcuxion, Let's Discuss Your Tech Startup Needs
