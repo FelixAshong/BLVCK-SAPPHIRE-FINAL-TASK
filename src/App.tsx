@@ -291,10 +291,12 @@ function App() {
       <section className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div className="w-full lg:max-w-lg">
-          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-4">
-            <div className="w-8 h-0.5 bg-gray-400"></div>
-            <FaTasks />
-            <span>Workflow</span>
+          <div className="flex items-center space-x-2 text-xs text-gray-500">
+            <img
+              src="/src/assets/images/top chip workflow.png"
+              alt="Workflow"
+              className="w-40 h-auto"
+            />
           </div>
           <h2 className="text-3xl font-extrabold mb-4">
             Tech startups incubation and acceleration
@@ -318,7 +320,7 @@ function App() {
            style={{
              width: '566px',
              height: '355px',
-             top: '1250px',
+             top: '1175px',
              left: '591px',
              zIndex: 10
            }}
@@ -329,14 +331,20 @@ function App() {
       {/* Features Section */}
       <section className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div className="relative w-full lg:w-1/2">
-          <img
-            src="/src/assets/images/Final Task_image2.jpeg"
-            alt="Tech journey concept"
-            className="w-full h-80 object-cover rounded-lg shadow-lg transform rotate-2"
-          />
-          <div className="absolute top-0 left-0 w-full h-full bg-lime-100 opacity-20 rounded-lg -z-10 transform -rotate-2"></div>
-        </div>
+          <div className="relative w-full lg:w-1/2">
+            {/* Background shapes */}
+            <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
+            <div className="absolute -bottom-6 -left-6 w-40 h-20 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
+            <img
+              src="/src/assets/images/image.png"
+              alt="Tech journey concept"
+              className="w-full h-96 object-contain object-center relative z-10"
+              style={{
+                transform: 'rotate(0deg)',
+                opacity: 1
+              }}
+            />
+         </div>
         <div className="w-full lg:max-w-lg lg:ml-12">
           <div className="flex items-center space-x-2 text-xs text-gray-500 mb-4">
             <div className="w-8 h-0.5 bg-gray-400"></div>
