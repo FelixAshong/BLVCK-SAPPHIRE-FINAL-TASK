@@ -330,22 +330,22 @@ function App() {
 
       {/* Features Section */}
       <section className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-2">
           <div className="relative w-full lg:w-1/2">
             {/* Background shapes */}
             <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
             <div className="absolute -bottom-6 -left-6 w-40 h-20 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
             <img
               src="/src/assets/images/image.png"
-              alt="Tech journey concept"
+            alt="Tech journey concept"
               className="w-full h-96 object-contain object-center relative z-10"
               style={{
                 transform: 'rotate(0deg)',
                 opacity: 1
               }}
             />
-         </div>
-        <div className="w-full lg:max-w-lg lg:ml-12">
+        </div>
+        <div className="w-full lg:max-w-lg lg:ml-2">
           <div className="flex items-center space-x-2 text-xs text-gray-500 mb-4">
             <div className="w-8 h-0.5 bg-gray-400"></div>
             <FaBuilding />
@@ -358,22 +358,18 @@ function App() {
             Turn Your Tech Vision Into Reality. Choose XCUXION for Measurable
             Success.
           </p>
-          <div className="grid grid-cols-2 gap-3 mb-8 text-xs text-lime-700">
-            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-2">
-              <FaCheckCircle size={14} />
-              <span>Proven track record</span>
+          <div className="grid grid-cols-2 gap-3 mb-8">
+            <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+              <span className="text-sm text-lime-800 font-medium">⦿ Proven track record</span>
             </div>
-            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-2">
-              <FaNetworkWired size={14} />
-              <span>Network and resources</span>
+            <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+              <span className="text-sm text-lime-800 font-medium">⦿ Network and resources</span>
             </div>
-            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-2">
-              <FaLeaf size={14} />
-              <span>Scalability and Sustainability</span>
+            <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+              <span className="text-sm text-lime-800 font-medium">⦿ Scalability and Sustainability</span>
             </div>
-            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-2">
-              <FaUserTie size={14} />
-              <span>Experienced Mentorship</span>
+            <div className="bg-lime-50 px-3 py-2 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)'}}>
+              <span className="text-sm text-lime-800 font-medium">⦿ Experienced Mentorship</span>
             </div>
           </div>
           <button 
