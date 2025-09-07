@@ -37,8 +37,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans overflow-x-hidden">
-      <div className="max-w-screen-xl mx-auto relative">
+    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
+      <div className="w-full max-w-7xl mx-auto relative px-4 sm:px-6 lg:px-8">
       {/* Header */}
       <header className="relative w-full">
         <div className="font-mono font-extralight text-sm absolute top-8" style={{left: '117px', zIndex: 20}}>xcuxion</div>
@@ -62,57 +62,31 @@ function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="relative w-full overflow-hidden"
-        style={{
-          width: '1440px',
-          height: '443px',
-          top: '8px'
-        }}
+        className="relative w-full overflow-hidden min-h-[443px] mt-2"
       >
         {/* Top chip image */}
         <img
           src="/src/assets/images/top chip.png"
           alt="Top chip"
-          className="absolute"
-          style={{
-            width: '234px',
-            height: '23px',
-            top: '131px',
-            left: '118px',
-            zIndex: 4
-          }}
+          className="absolute top-32 left-4 sm:left-8 lg:left-14 xl:left-20 w-44 sm:w-48 lg:w-52 h-auto z-4"
         />
         
         <div 
-          className="absolute"
-          style={{
-            width: '665px',
-            height: '237px',
-            top: '160px',
-            left: '117px',
-            zIndex: 10
-          }}
+          className="absolute top-40 left-4 sm:left-8 lg:left-16 xl:left-28 z-10 max-w-2xl"
         >
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2">
             From Idea to Impact! <br /> Your Technology Partner
           </h1>
           <p className="text-sm text-gray-600 mb-4">
             From initial concept to market launch, we provide the expertise to
-            bring your tech vision to life. We navigate the complexities of
-            technology and business, so you can focus on achieving your goals.
+            bring your tech vision to life.<br />
+            We navigate the complexities of technology and business, so you can focus on achieving your goals.
           </p>
         </div>
         
         {/* Button and Social Icons Container */}
         <div 
-          className="absolute flex items-center"
-          style={{
-            width: '252.072265625px',
-            height: '53px',
-            top: '315px',
-            left: '118px',
-            zIndex: 10
-          }}
+          className="absolute top-80 left-4 sm:left-8 lg:left-16 xl:left-28 z-10 flex items-center flex-wrap gap-4"
         >
           <button 
             onClick={() => scrollToSection('services')}
@@ -145,62 +119,42 @@ function App() {
         <img
           src="/src/assets/images/Mask group.png"
           alt="Mask group background"
-          className="absolute"
-          style={{
-            width: '1440px',
-            height: '443px',
-            top: '8px',
-            left: '0px',
-            zIndex: 1
-          }}
+          className="absolute top-2 left-0 w-full h-full object-cover z-1"
         />
         
         {/* Main hero image - Image1 */}
         <img
           src="/src/assets/images/Final_Task_Image1.png"
           alt="Technology concept illustration"
-          className="absolute"
-          style={{
-            width: '327.870361328125px',
-            height: '361.4719543457031px',
-            top: '52px',
-            left: '866px',
-            zIndex: 2
-          }}
+          className="absolute top-12 right-4 sm:right-8 lg:right-16 xl:right-20 w-56 sm:w-64 lg:w-72 xl:w-80 h-auto z-2"
         />
         
         {/* Incuts overlay - top layer */}
         <img
           src="/src/assets/images/incuts.png"
           alt="Incuts overlay"
-          className="absolute"
-          style={{
-            width: '509.85772705078125px',
-            height: '199.44664001464844px',
-            top: '170px',
-            left: '778.01px',
-            zIndex: 3
-          }}
+          className="absolute top-40 right-2 sm:right-4 lg:right-6 xl:right-8 w-80 sm:w-96 lg:w-[28rem] xl:w-[32rem] h-auto z-3"
         />
       </section>
 
       {/* Services Section */}
       <section
         id="services"
-        className="max-w-7xl mx-auto px-6 py-12 bg-white rounded-lg shadow-sm"
+        className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8"
       >
-        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-6">
+        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-8">
           <div className="w-8 h-0.5 bg-gray-400"></div>
           <FaServicestack />
-          <h2 className="font-semibold text-lg">What we do</h2>
+          <span>Services</span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-700">
+        <h2 className="text-center text-2xl font-bold mb-12">What we do</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm text-gray-700">
           <div className="flex space-x-4">
             <div className="text-purple-600 mt-1">
               <FaBuilding size={20} />
             </div>
             <div>
-              <h3 className="font-semibold mb-1">Lorem ipsum dolor</h3>
+              <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
               <p>
                 Sit amet consectetur adipisicing elit. Maxime mollitia,
                 molestiae quas vel sint commodi repudiandae consequuntur
@@ -209,12 +163,12 @@ function App() {
               </p>
             </div>
           </div>
-          <div className="flex space-x-4 border border-lime-200 rounded p-4 bg-lime-50">
+          <div className="flex space-x-4 p-6 bg-lime-50 rounded-lg">
             <div className="text-lime-700 mt-1">
               <FaBuilding size={20} />
             </div>
             <div>
-              <h3 className="font-semibold mb-1">Lorem ipsum dolor</h3>
+              <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
               <p>
                 Sit amet consectetur adipisicing elit. Maxime mollitia,
                 molestiae quas vel sint commodi repudiandae consequuntur
@@ -228,7 +182,7 @@ function App() {
               <FaBuilding size={20} />
             </div>
             <div>
-              <h3 className="font-semibold mb-1">Lorem ipsum dolor</h3>
+              <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
               <p>
                 Sit amet consectetur adipisicing elit. Maxime mollitia,
                 molestiae quas vel sint commodi repudiandae consequuntur
@@ -241,177 +195,181 @@ function App() {
       </section>
 
       {/* Working Process Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-6">
+      <section className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-8">
           <div className="w-8 h-0.5 bg-gray-400"></div>
           <FaTasks />
-          <h2 className="font-semibold text-lg">Our working process</h2>
+          <span>Workflow</span>
         </div>
-        <div className="flex justify-center space-x-12">
+        <h2 className="text-center text-2xl font-bold mb-12">Our working process</h2>
+        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8">
           {/* Each step */}
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-14 h-14 rounded-full bg-gray-700 flex items-center justify-center text-white">
-              <FaClipboardCheck />
+          <div className="flex flex-col items-center space-y-3">
+            <div className="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center text-white">
+              <FaClipboardCheck size={20} />
             </div>
-            <span className="text-xs">Planning</span>
+            <span className="text-sm font-medium">Planning</span>
           </div>
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-14 h-14 rounded-full border-2 border-lime-500 flex items-center justify-center text-lime-500">
-              <FaClipboardCheck />
+          <div className="w-8 h-0.5 bg-gray-300 border-dashed border-t-2"></div>
+          <div className="flex flex-col items-center space-y-3">
+            <div className="w-16 h-16 rounded-full border-2 border-lime-500 flex items-center justify-center text-lime-500">
+              <FaClipboardCheck size={20} />
             </div>
-            <span className="text-xs text-lime-500">Analysis</span>
+            <span className="text-sm font-medium text-lime-500">Analysis</span>
           </div>
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-14 h-14 rounded-full bg-gray-700 flex items-center justify-center text-white">
-              <FaClipboardCheck />
+          <div className="w-8 h-0.5 bg-gray-300 border-dashed border-t-2"></div>
+          <div className="flex flex-col items-center space-y-3">
+            <div className="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center text-white">
+              <FaClipboardCheck size={20} />
             </div>
-            <span className="text-xs">Design</span>
+            <span className="text-sm font-medium">Design</span>
           </div>
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-14 h-14 rounded-full border-2 border-lime-500 flex items-center justify-center text-lime-500">
-              <FaClipboardCheck />
+          <div className="w-8 h-0.5 bg-gray-300 border-dashed border-t-2"></div>
+          <div className="flex flex-col items-center space-y-3">
+            <div className="w-16 h-16 rounded-full border-2 border-lime-500 flex items-center justify-center text-lime-500">
+              <FaClipboardCheck size={20} />
             </div>
-            <span className="text-xs text-lime-500">Development</span>
+            <span className="text-sm font-medium text-lime-500">Development</span>
           </div>
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-14 h-14 rounded-full bg-gray-700 flex items-center justify-center text-white">
-              <FaClipboardCheck />
+          <div className="w-8 h-0.5 bg-gray-300 border-dashed border-t-2"></div>
+          <div className="flex flex-col items-center space-y-3">
+            <div className="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center text-white">
+              <FaClipboardCheck size={20} />
             </div>
-            <span className="text-xs">Maintenance</span>
+            <span className="text-sm font-medium">Maintenance</span>
           </div>
         </div>
       </section>
 
       {/* Incubation Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12 bg-white rounded-lg shadow-sm flex flex-col md:flex-row items-center justify-between">
-        <div className="max-w-lg">
-          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-2">
+      <section className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="w-full lg:max-w-lg">
+          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-4">
             <div className="w-8 h-0.5 bg-gray-400"></div>
             <FaTasks />
             <span>Workflow</span>
           </div>
-          <h2 className="text-2xl font-extrabold mb-2">
+          <h2 className="text-3xl font-extrabold mb-4">
             Tech startups incubation and acceleration
           </h2>
-          <p className="text-sm text-gray-600 mb-4">
+          <p className="text-sm text-gray-600 mb-6">
             Ready to take your tech startup to the next level? Apply to our
             incubation and acceleration programs today!
           </p>
           <button 
             onClick={() => scrollToSection('contact')}
-            className="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
+            className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
           >
             <span>Learn more</span>
             <FaChevronRight size={12} />
           </button>
         </div>
-        <div className="relative mt-8 md:mt-0 md:w-1/2 flex justify-center">
-          <img
-            src="https://picsum.photos/450/300"
-            alt="Incubation program illustration"
-            className="rounded-lg shadow-lg"
-          />
-          {/* Overlay speech bubbles */}
-          <div className="absolute top-10 left-10 bg-white p-2 rounded shadow text-xs max-w-xs">
-            <strong>Stakeholder</strong>
-            <p>
-              Ready to take your tech startup to the next level? Apply to our
-              incubation!
-            </p>
+        <div className="relative w-full lg:w-1/2 flex justify-center">
+          <div className="relative w-full max-w-md h-64 bg-gradient-to-br from-lime-100 to-purple-100 rounded-lg flex items-center justify-center">
+            {/* Abstract background shapes */}
+            <div className="absolute top-4 left-4 w-16 h-16 bg-lime-200 rounded-full opacity-50"></div>
+            <div className="absolute top-8 right-8 w-12 h-12 bg-purple-200 rounded-full opacity-50"></div>
+            <div className="absolute bottom-6 left-8 w-20 h-20 bg-lime-200 rounded-full opacity-30"></div>
+            <div className="absolute bottom-4 right-4 w-14 h-14 bg-purple-200 rounded-full opacity-40"></div>
+            
+            {/* Speech bubbles */}
+            <div className="absolute top-8 left-8 bg-white p-3 rounded-lg shadow-md text-xs max-w-32">
+              <strong className="text-xs">Tech Startup</strong>
+              <p className="text-xs mt-1">Ready to take your tech startup to the next level?</p>
+            </div>
+            <div className="absolute top-16 right-8 bg-white p-3 rounded-lg shadow-md text-xs max-w-32">
+              <strong className="text-xs">Incubation</strong>
+              <p className="text-xs mt-1">Apply to our incubation programs today!</p>
+            </div>
+            <div className="absolute bottom-8 left-12 bg-white p-3 rounded-lg shadow-md text-xs max-w-32">
+              <strong className="text-xs">Acceleration</strong>
+              <p className="text-xs mt-1">Scale your startup with our support!</p>
+            </div>
           </div>
-          <div className="absolute top-28 right-10 bg-white p-2 rounded shadow text-xs max-w-xs">
-            <strong>Stakeholder</strong>
-            <p>
-              Ready to take your tech startup to the next level? Apply to our
-              incubation!
-            </p>
-          </div>
-          <div className="absolute bottom-10 left-20 bg-white p-2 rounded shadow text-xs max-w-xs">
-            <strong>Stakeholder</strong>
-            <p>
-              Ready to take your tech startup to the next level? Apply to our
-              incubation!
-            </p>
-          </div>
+        </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between">
-        <div className="relative md:w-1/2">
+      <section className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="relative w-full lg:w-1/2">
           <img
-            src="https://picsum.photos/500/350"
+            src="/src/assets/images/Final Task_image2.jpeg"
             alt="Tech journey concept"
-            className="rounded-lg shadow-lg"
+            className="w-full h-80 object-cover rounded-lg shadow-lg transform rotate-2"
           />
-          <div className="absolute top-0 left-0 w-full h-full bg-lime-100 opacity-30 rounded-lg -z-10 transform rotate-3"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-lime-100 opacity-20 rounded-lg -z-10 transform -rotate-2"></div>
         </div>
-        <div className="max-w-lg md:ml-12 mt-8 md:mt-0">
-          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-2">
+        <div className="w-full lg:max-w-lg lg:ml-12">
+          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-4">
             <div className="w-8 h-0.5 bg-gray-400"></div>
             <FaBuilding />
             <span>Why choose us</span>
           </div>
-          <h2 className="text-2xl font-extrabold mb-2">
+          <h2 className="text-3xl font-extrabold mb-4">
             Launch Your Tech Journey with Confidence
           </h2>
-          <p className="text-sm text-gray-600 mb-4">
+          <p className="text-sm text-gray-600 mb-6">
             Turn Your Tech Vision Into Reality. Choose XCUXION for Measurable
             Success.
           </p>
-          <div className="grid grid-cols-2 gap-3 mb-6 text-xs text-lime-700">
-            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-1">
-              <FaCheckCircle />
+          <div className="grid grid-cols-2 gap-3 mb-8 text-xs text-lime-700">
+            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-2">
+              <FaCheckCircle size={14} />
               <span>Proven track record</span>
             </div>
-            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-1">
-              <FaNetworkWired />
+            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-2">
+              <FaNetworkWired size={14} />
               <span>Network and resources</span>
             </div>
-            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-1">
-              <FaLeaf />
+            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-2">
+              <FaLeaf size={14} />
               <span>Scalability and Sustainability</span>
             </div>
-            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-1">
-              <FaUserTie />
+            <div className="flex items-center space-x-2 bg-lime-100 rounded px-3 py-2">
+              <FaUserTie size={14} />
               <span>Experienced Mentorship</span>
             </div>
           </div>
           <button 
             onClick={() => scrollToSection('contact')}
-            className="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
+            className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
           >
             <span>Learn more</span>
             <FaChevronRight size={12} />
           </button>
         </div>
+        </div>
       </section>
 
       {/* Reviews Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12 bg-white rounded-lg shadow-sm">
-        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-6">
+      <section className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-8">
           <div className="w-8 h-0.5 bg-gray-400"></div>
           <FaTasks />
-          <h2 className="font-semibold text-lg">Check out recent reviews</h2>
+          <span>Workflow</span>
         </div>
-        <div className="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-6">
+        <h2 className="text-center text-2xl font-bold mb-12">Check out recent reviews</h2>
+        <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8">
           {[1, 2, 3].map((i) => (
             <div
               key={i}
-              className="bg-white rounded-lg shadow p-4 max-w-xs flex flex-col"
+              className="bg-white rounded-lg shadow-lg p-6 max-w-xs flex flex-col border border-gray-100"
             >
-              <div className="flex items-center space-x-3 mb-3">
+              <div className="flex items-center space-x-3 mb-4">
                 <img
-                  src={`https://picsum.photos/seed/review${i}/40/40`}
+                  src={`https://picsum.photos/seed/review${i}/50/50`}
                   alt="Reviewer avatar"
-                  className="rounded-full"
+                  className="rounded-full w-12 h-12"
                 />
                 <div>
                   <p className="font-semibold text-sm">Prince Nodjon</p>
                   <p className="text-xs text-gray-500">Software Developer</p>
                 </div>
               </div>
-              <p className="text-xs text-gray-700 mb-3">
+              <p className="text-sm text-gray-700 mb-4 flex-grow">
                 Sit amet consectetur adipisicing elit. Maxime mollitia,
                 molestiae quas vel sint commodi repudiandae consequuntur
               </p>
@@ -420,15 +378,11 @@ function App() {
                   <svg
                     key={idx}
                     xmlns="http://www.w3.org/2000/svg"
-                    fill={idx < 4 ? "currentColor" : "none"}
+                    fill="currentColor"
                     viewBox="0 0 24 24"
-                    stroke="currentColor"
                     className="w-4 h-4"
                   >
                     <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
                       d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.287 3.974c.3.922-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.175 0l-3.388 2.462c-.784.57-1.838-.196-1.539-1.118l1.287-3.974a1 1 0 00-.364-1.118L2.045 9.4c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
                     />
                   </svg>
@@ -437,30 +391,38 @@ function App() {
             </div>
           ))}
         </div>
-        <div className="flex justify-center mt-6 space-x-2 text-gray-400">
-          <span className="w-2 h-2 rounded-full bg-lime-500"></span>
-          <span className="w-2 h-2 rounded-full bg-gray-300"></span>
-          <span className="w-2 h-2 rounded-full bg-gray-300"></span>
+        <div className="flex justify-center mt-8 space-x-2">
+          <span className="w-3 h-3 rounded-full bg-lime-500"></span>
+          <span className="w-3 h-3 rounded-full bg-gray-300"></span>
+          <span className="w-3 h-3 rounded-full bg-gray-300"></span>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section
         id="faq"
-        className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row"
+        className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8"
       >
-        <div className="md:w-1/3 pr-6">
-          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-2">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+        <div className="w-full lg:w-1/3 lg:pr-8">
+          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-4">
             <div className="w-8 h-0.5 bg-gray-400"></div>
             <FaQuestionCircle />
-            <h2 className="text-2xl font-extrabold">Frequently asked question</h2>
+            <span>FAQ</span>
           </div>
-          <ul className="text-sm text-gray-700 list-disc list-inside space-y-2">
-            <li>Get Answers to Your Tech Startup Questions</li>
-            <li>Explore Our FAQ to Learn More</li>
+          <h2 className="text-3xl font-extrabold mb-4">Frequently asked question</h2>
+          <ul className="text-sm text-gray-700 space-y-3">
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-lime-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Get Answers to Your Tech Startup Questions
+            </li>
+            <li className="flex items-start">
+              <span className="w-2 h-2 bg-lime-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+              Explore Our FAQ to Learn More
+            </li>
           </ul>
         </div>
-        <div className="md:w-2/3">
+        <div className="w-full lg:w-2/3">
           {[
             {
               question: "Lorem ipsum dolor",
@@ -486,108 +448,118 @@ function App() {
           ].map((faq, idx) => (
             <div
               key={idx}
-              className="border-b border-gray-300 py-3 cursor-pointer"
+              className="border-b border-gray-300 py-4 cursor-pointer hover:bg-gray-100 transition-colors rounded px-2"
               onClick={() => toggleFaq(idx)}
             >
               <div className="flex justify-between items-center">
-                <h3 className="font-semibold text-gray-800">{faq.question}</h3>
-                <span className="text-gray-500">{activeFaq === idx ? "-" : "+"}</span>
+                <h3 className="font-semibold text-gray-800 text-sm">{faq.question}</h3>
+                <div className="w-6 h-6 rounded-full border border-gray-400 flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">{activeFaq === idx ? "-" : "+"}</span>
+                </div>
               </div>
               {activeFaq === idx && (
-                <p className="mt-2 text-sm text-gray-600">{faq.answer}</p>
+                <p className="mt-3 text-sm text-gray-600">{faq.answer}</p>
               )}
             </div>
           ))}
+        </div>
         </div>
       </section>
 
       {/* Contact Section */}
       <section
         id="contact"
-        className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row"
+        className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8"
       >
-        <form className="md:w-1/2 space-y-4">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+        <form className="w-full lg:w-1/2 space-y-4">
           <div className="flex space-x-4">
             <input
               type="text"
               placeholder="First name"
-              className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
+              className="flex-1 border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
             />
             <input
               type="text"
               placeholder="Last name"
-              className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
+              className="flex-1 border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
             />
           </div>
           <input
             type="email"
             placeholder="Email eg. princendjoh5@gmail.com"
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
+            className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
           />
           <input
             type="tel"
             placeholder="Phone eg. 0205358892"
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
+            className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500"
           />
           <textarea
             placeholder="Type message"
-            rows={4}
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-lime-500"
+            rows={5}
+            className="w-full border border-gray-300 rounded px-4 py-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-lime-500"
           ></textarea>
           <button
             type="submit"
-            className="bg-gray-900 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
+            className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
           >
             <span>Send</span>
             <FaChevronRight size={12} />
           </button>
         </form>
-        <div className="md:w-1/2 md:pl-12 mt-8 md:mt-0">
-          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-2">
+        <div className="w-full lg:w-1/2 lg:pl-12">
+          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-4">
             <div className="w-8 h-0.5 bg-gray-400"></div>
             <FaEnvelope />
-            <h2 className="text-2xl font-extrabold">
-              Connect with xcuxion, Let's Discuss Your Tech Startup Needs
-            </h2>
+            <span>Contact us</span>
           </div>
+          <h2 className="text-3xl font-extrabold mb-4">
+            Connect with xcuxion, Let's Discuss Your Tech Startup Needs
+          </h2>
           <p className="text-sm text-gray-600">
             We're here to answer your questions and explore how we can help you
             achieve your goals.
           </p>
         </div>
+        </div>
       </section>
 
       {/* Footer */}
-      <footer className="max-w-7xl mx-auto px-6 py-6 text-center text-xs text-gray-600">
-        <div className="mb-2">xcuxion</div>
-        <nav className="flex justify-center space-x-4 mb-2">
-          <button onClick={() => scrollToSection('home')} className="hover:text-gray-800 transition-colors">
-            Home
-          </button>
-          <button onClick={() => scrollToSection('services')} className="hover:text-gray-800 transition-colors">
-            Services
-          </button>
-          <button onClick={() => scrollToSection('contact')} className="hover:text-gray-800 transition-colors">
-            Contact
-          </button>
-          <button onClick={() => scrollToSection('faq')} className="hover:text-gray-800 transition-colors">
-            FAQ
-          </button>
-        </nav>
-        <div className="mb-2">© 2024 xcuxion, ALL RIGHTS RESERVED</div>
-        <div className="flex justify-center space-x-4 text-gray-600 text-lg">
-          <a href="#" aria-label="Facebook">
-            <FaFacebookF />
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <FaLinkedinIn />
-          </a>
-          <a href="#" aria-label="Twitter">
-            <FaTwitter />
-          </a>
-          <a href="#" aria-label="Instagram">
-            <FaInstagram />
-          </a>
+      <footer className="w-full py-8 bg-gray-50 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          <div className="text-left">
+            <div className="text-lg font-bold mb-2">xcuxion</div>
+            <div className="text-xs text-gray-600 mb-4">© 2024 xcuxion, ALL RIGHTS RESERVED</div>
+            <div className="flex space-x-4 text-gray-600 text-lg">
+              <a href="#" aria-label="Facebook" className="hover:text-gray-800 transition-colors">
+                <FaFacebookF />
+              </a>
+              <a href="#" aria-label="LinkedIn" className="hover:text-gray-800 transition-colors">
+                <FaLinkedinIn />
+              </a>
+              <a href="#" aria-label="Twitter" className="hover:text-gray-800 transition-colors">
+                <FaTwitter />
+              </a>
+              <a href="#" aria-label="Instagram" className="hover:text-gray-800 transition-colors">
+                <FaInstagram />
+              </a>
+            </div>
+          </div>
+          <nav className="flex space-x-8 text-sm text-gray-600">
+            <button onClick={() => scrollToSection('home')} className="hover:text-gray-800 transition-colors">
+              Home
+            </button>
+            <button onClick={() => scrollToSection('services')} className="hover:text-gray-800 transition-colors">
+              Services
+            </button>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-gray-800 transition-colors">
+              Contact
+            </button>
+            <button onClick={() => scrollToSection('faq')} className="hover:text-gray-800 transition-colors">
+              FAQ
+            </button>
+          </nav>
         </div>
       </footer>
       </div>
