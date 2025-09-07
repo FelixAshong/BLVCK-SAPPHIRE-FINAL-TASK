@@ -641,12 +641,9 @@ function App() {
            {/* Desktop Layout - hidden on mobile */}
            <div className="hidden lg:flex flex-col lg:flex-row items-center justify-between gap-2">
              <div className="relative w-full lg:w-1/2">
-               {/* Background shapes */}
-               <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
-               <div className="absolute -bottom-6 -left-6 w-40 h-20 rounded-full -z-10" style={{backgroundColor: 'rgba(224, 232, 188, 1)'}}></div>
                <img
                  src="/images/image.png"
-            alt="Tech journey concept"
+               alt="Tech journey concept"
                  className="w-full h-96 object-contain object-center relative z-10"
                  style={{
                    transform: 'rotate(0deg)',
