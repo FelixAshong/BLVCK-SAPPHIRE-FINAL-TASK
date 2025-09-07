@@ -125,7 +125,7 @@ function App() {
         {/* Main hero image - Image1 */}
         <img
           src="/src/assets/images/Final_Task_Image1.png"
-          alt="Technology concept illustration"
+            alt="Technology concept illustration"
           className="absolute top-12 right-4 sm:right-8 lg:right-16 xl:right-20 w-56 sm:w-64 lg:w-72 xl:w-80 h-auto z-2"
         />
         
@@ -142,19 +142,30 @@ function App() {
         id="services"
         className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8"
       >
-        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-8">
-          <div className="w-8 h-0.5 bg-gray-400"></div>
-          <FaServicestack />
-          <span>Services</span>
+         <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
+           <img
+             src="/src/assets/images/top chip service.png"
+             alt="Services"
+             className="w-40 h-auto"
+           />
         </div>
-        <h2 className="text-center text-2xl font-bold mb-12">What we do</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm text-gray-700">
+         <h2 className="text-center text-2xl font-bold mb-12">What we do</h2>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm text-gray-700">
           <div className="flex space-x-4">
-            <div className="text-purple-600 mt-1">
-              <FaBuilding size={20} />
+             <div className="mt-1">
+               <img
+                 src="/src/assets/images/group 1.png"
+                 alt="Service icon"
+                 className="object-contain flex-shrink-0"
+                 style={{
+                   width: '199px',
+                   height: '143px',
+                   marginTop: '-50px'
+                 }}
+               />
             </div>
             <div>
-              <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
+               <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
               <p>
                 Sit amet consectetur adipisicing elit. Maxime mollitia,
                 molestiae quas vel sint commodi repudiandae consequuntur
@@ -163,12 +174,21 @@ function App() {
               </p>
             </div>
           </div>
-          <div className="flex space-x-4 p-6 bg-lime-50 rounded-lg">
-            <div className="text-lime-700 mt-1">
-              <FaBuilding size={20} />
+           <div className="flex space-x-4 p-6 bg-lime-50 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)', marginTop: '-20px'}}>
+             <div className="mt-1">
+               <img
+                 src="/src/assets/images/group 2.png"
+                 alt="Service icon"
+                 className="object-contain flex-shrink-0"
+                 style={{
+                   width: '250px',
+                   height: '180px',
+                   marginTop: '-70px'
+                 }}
+               />
             </div>
             <div>
-              <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
+               <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
               <p>
                 Sit amet consectetur adipisicing elit. Maxime mollitia,
                 molestiae quas vel sint commodi repudiandae consequuntur
@@ -178,11 +198,20 @@ function App() {
             </div>
           </div>
           <div className="flex space-x-4">
-            <div className="text-purple-600 mt-1">
-              <FaBuilding size={20} />
+             <div className="mt-1">
+               <img
+                 src="/src/assets/images/group 1.png"
+                 alt="Service icon"
+                 className="object-contain flex-shrink-0"
+                 style={{
+                   width: '199px',
+                   height: '143px',
+                   marginTop: '-50px'
+                 }}
+               />
             </div>
             <div>
-              <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
+               <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
               <p>
                 Sit amet consectetur adipisicing elit. Maxime mollitia,
                 molestiae quas vel sint commodi repudiandae consequuntur
@@ -197,9 +226,11 @@ function App() {
       {/* Working Process Section */}
       <section className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-8">
-          <div className="w-8 h-0.5 bg-gray-400"></div>
-          <FaTasks />
-          <span>Workflow</span>
+          <img
+            src="/src/assets/images/top chip workflow.png"
+            alt="Workflow"
+            className="w-40 h-auto"
+          />
         </div>
         <h2 className="text-center text-2xl font-bold mb-12">Our working process</h2>
         <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 lg:gap-8">
@@ -265,29 +296,18 @@ function App() {
             <FaChevronRight size={12} />
           </button>
         </div>
-        <div className="relative w-full lg:w-1/2 flex justify-center">
-          <div className="relative w-full max-w-md h-64 bg-gradient-to-br from-lime-100 to-purple-100 rounded-lg flex items-center justify-center">
-            {/* Abstract background shapes */}
-            <div className="absolute top-4 left-4 w-16 h-16 bg-lime-200 rounded-full opacity-50"></div>
-            <div className="absolute top-8 right-8 w-12 h-12 bg-purple-200 rounded-full opacity-50"></div>
-            <div className="absolute bottom-6 left-8 w-20 h-20 bg-lime-200 rounded-full opacity-30"></div>
-            <div className="absolute bottom-4 right-4 w-14 h-14 bg-purple-200 rounded-full opacity-40"></div>
-            
-            {/* Speech bubbles */}
-            <div className="absolute top-8 left-8 bg-white p-3 rounded-lg shadow-md text-xs max-w-32">
-              <strong className="text-xs">Tech Startup</strong>
-              <p className="text-xs mt-1">Ready to take your tech startup to the next level?</p>
-            </div>
-            <div className="absolute top-16 right-8 bg-white p-3 rounded-lg shadow-md text-xs max-w-32">
-              <strong className="text-xs">Incubation</strong>
-              <p className="text-xs mt-1">Apply to our incubation programs today!</p>
-            </div>
-            <div className="absolute bottom-8 left-12 bg-white p-3 rounded-lg shadow-md text-xs max-w-32">
-              <strong className="text-xs">Acceleration</strong>
-              <p className="text-xs mt-1">Scale your startup with our support!</p>
-            </div>
-          </div>
-        </div>
+         <img
+           src="/src/assets/images/right.png"
+           alt="Tech startup incubation illustration"
+           className="absolute"
+           style={{
+             width: '566px',
+             height: '355px',
+             top: '1250px',
+             left: '591px',
+             zIndex: 10
+           }}
+         />
         </div>
       </section>
 
@@ -547,19 +567,19 @@ function App() {
             </div>
           </div>
           <nav className="flex space-x-8 text-sm text-gray-600">
-            <button onClick={() => scrollToSection('home')} className="hover:text-gray-800 transition-colors">
-              Home
-            </button>
-            <button onClick={() => scrollToSection('services')} className="hover:text-gray-800 transition-colors">
-              Services
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="hover:text-gray-800 transition-colors">
-              Contact
-            </button>
-            <button onClick={() => scrollToSection('faq')} className="hover:text-gray-800 transition-colors">
-              FAQ
-            </button>
-          </nav>
+          <button onClick={() => scrollToSection('home')} className="hover:text-gray-800 transition-colors">
+            Home
+          </button>
+          <button onClick={() => scrollToSection('services')} className="hover:text-gray-800 transition-colors">
+            Services
+          </button>
+          <button onClick={() => scrollToSection('contact')} className="hover:text-gray-800 transition-colors">
+            Contact
+          </button>
+          <button onClick={() => scrollToSection('faq')} className="hover:text-gray-800 transition-colors">
+            FAQ
+          </button>
+        </nav>
         </div>
       </footer>
       </div>
