@@ -95,11 +95,11 @@ function App() {
         <img
           src="/src/assets/images/top chip.png"
           alt="Top chip"
-          className="absolute top-32 left-4 sm:left-8 lg:left-14 xl:left-20 w-44 sm:w-48 lg:w-52 h-auto z-4"
+          className="absolute top-32 left-4 sm:left-8 lg:left-14 xl:left-20 w-40 h-auto z-4"
         />
         
         <div 
-          className="absolute top-40 left-4 sm:left-8 lg:left-16 xl:left-28 z-10 max-w-2xl"
+          className="absolute top-36 left-4 sm:left-8 lg:left-16 xl:left-28 z-10 max-w-2xl"
         >
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2">
             From Idea to Impact! <br /> Your Technology Partner
@@ -371,10 +371,12 @@ function App() {
             />
         </div>
         <div className="w-full lg:max-w-lg lg:ml-2">
-          <div className="flex items-center space-x-2 text-xs text-gray-500 mb-4">
-            <div className="w-8 h-0.5 bg-gray-400"></div>
-            <FaBuilding />
-            <span>Why choose us</span>
+          <div className="flex items-center justify-start">
+            <img
+              src="/src/assets/images/top chip choose.png"
+              alt="Why choose us"
+              className="w-40 h-auto"
+            />
           </div>
           <h2 className="text-3xl font-extrabold mb-4">
             Launch Your Tech Journey with Confidence
@@ -433,31 +435,31 @@ function App() {
                       <div className="flex items-center space-x-3 mb-4">
                         <img
                           src="src/assets/images/Final Task_image3.jpeg"
-                          alt="Reviewer avatar"
+                  alt="Reviewer avatar"
                           className="rounded-full w-12 h-12 object-cover"
-                        />
-                        <div>
+                />
+                <div>
                           <p className="font-semibold text-sm">{review.name}</p>
                           <p className="text-xs text-gray-500">{review.role}</p>
-                        </div>
-                      </div>
+                </div>
+              </div>
                       <p className="text-sm text-gray-700 mb-4 flex-grow">
                         {review.text}
-                      </p>
+              </p>
                       <div className="flex space-x-1">
                         {[...Array(4)].map((_, idx) => (
-                          <svg
-                            key={idx}
-                            xmlns="http://www.w3.org/2000/svg"
+                  <svg
+                    key={idx}
+                    xmlns="http://www.w3.org/2000/svg"
                             fill="currentColor"
-                            viewBox="0 0 24 24"
+                    viewBox="0 0 24 24"
                             className="w-4 h-4 text-yellow-400"
-                          >
-                            <path
-                              d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.287 3.974c.3.922-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.175 0l-3.388 2.462c-.784.57-1.838-.196-1.539-1.118l1.287-3.974a1 1 0 00-.364-1.118L2.045 9.4c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                            />
-                          </svg>
-                        ))}
+                  >
+                    <path
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.287 3.974c.3.922-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.175 0l-3.388 2.462c-.784.57-1.838-.196-1.539-1.118l1.287-3.974a1 1 0 00-.364-1.118L2.045 9.4c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
+                    />
+                  </svg>
+                ))}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -470,10 +472,10 @@ function App() {
                             d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.287 3.974c.3.922-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.175 0l-3.388 2.462c-.784.57-1.838-.196-1.539-1.118l1.287-3.974a1 1 0 00-.364-1.118L2.045 9.4c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
                           />
                         </svg>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+              </div>
+            </div>
+          ))}
+        </div>
               </div>
             ))}
           </div>
@@ -567,7 +569,7 @@ function App() {
         className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8"
       >
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
-        <form className="w-full lg:w-1/2 space-y-4">
+        <form className="w-full lg:w-2/5 space-y-4">
           <div className="flex space-x-4">
             <input
               type="text"
@@ -602,7 +604,7 @@ function App() {
             <span>Send ➤</span>
           </button>
         </form>
-        <div className="w-full lg:w-1/2 lg:pl-12">
+        <div className="w-full lg:w-1/2 lg:pl-6">
           <div className="flex items-center justify-start">
             <img
               src="/src/assets/images/top chip contact.png"
@@ -623,25 +625,8 @@ function App() {
 
       {/* Footer */}
       <footer className="w-full py-8 bg-gray-50 px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <div className="text-left">
-            <div className="text-lg font-bold mb-2">xcuxion</div>
-            <div className="text-xs text-gray-600 mb-4">© 2024 xcuxion, ALL RIGHTS RESERVED</div>
-            <div className="flex space-x-4 text-gray-600 text-lg">
-              <a href="#" aria-label="Facebook" className="hover:text-gray-800 transition-colors">
-                <FaFacebookF />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-gray-800 transition-colors">
-                <FaLinkedinIn />
-              </a>
-              <a href="#" aria-label="Twitter" className="hover:text-gray-800 transition-colors">
-                <FaTwitter />
-              </a>
-              <a href="#" aria-label="Instagram" className="hover:text-gray-800 transition-colors">
-                <FaInstagram />
-              </a>
-            </div>
-          </div>
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="text-lg font-bold">xcuxion</div>
           <nav className="flex space-x-8 text-sm text-gray-600">
           <button onClick={() => scrollToSection('home')} className="hover:text-gray-800 transition-colors">
             Home
@@ -656,6 +641,21 @@ function App() {
             FAQ
           </button>
         </nav>
+          <div className="text-xs text-gray-600 font-bold">© 2024 xcuxion, ALL RIGHTS RESERVED</div>
+          <div className="flex space-x-4 text-gray-600 text-lg">
+            <a href="#" aria-label="Facebook" className="hover:text-gray-800 transition-colors">
+            <FaFacebookF />
+          </a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-gray-800 transition-colors">
+            <FaLinkedinIn />
+          </a>
+            <a href="#" aria-label="Twitter" className="hover:text-gray-800 transition-colors">
+            <FaTwitter />
+          </a>
+            <a href="#" aria-label="Instagram" className="hover:text-gray-800 transition-colors">
+            <FaInstagram />
+          </a>
+          </div>
         </div>
       </footer>
       </div>
