@@ -137,7 +137,14 @@ PROJECT/
 │       ├── top chip contact.png       # Contact section chip
 │       └── top chip choose.png        # Choose us section chip
 ├── src/
-│   ├── App.tsx            # Main application component with animations
+│   ├── components/        # React component modules
+│   │   ├── Header.tsx     # Navigation header with mobile menu
+│   │   ├── Hero.tsx       # Hero section with animations
+│   │   ├── Services.tsx   # Services showcase section
+│   │   ├── FAQ.tsx        # FAQ accordion component
+│   │   ├── Contact.tsx    # Contact form and info
+│   │   └── Footer.tsx     # Footer with links and social icons
+│   ├── App.tsx            # Main application component orchestrating all sections
 │   ├── main.tsx           # Application entry point
 │   ├── index.css          # Global styles, Tailwind imports, and custom animations
 │   └── assets/            # Legacy assets (moved to public for production)
@@ -151,12 +158,27 @@ PROJECT/
 
 ## 🎯 Key Implementation Details
 
+### Component Architecture
+- **Modular Structure**: Each major section extracted into dedicated components
+- **Props Interface**: TypeScript interfaces for type-safe component communication
+- **State Management**: Centralized state in App.tsx with props drilling to child components
+- **Separation of Concerns**: Each component handles its own styling and basic logic
+- **Reusable Components**: Clean, focused components that can be easily maintained
+
+### Component Breakdown
+- **Header.tsx**: Navigation with mobile menu state management
+- **Hero.tsx**: Complete hero section with animations and responsive layout
+- **Services.tsx**: Self-contained services showcase with grid layout
+- **FAQ.tsx**: Accordion functionality with state passed from parent
+- **Contact.tsx**: Contact form with styling and validation classes
+- **Footer.tsx**: Footer content with navigation callback props
+
 ### State Management
-- **FAQ Accordion**: Uses `useState` for managing active/inactive states
+- **FAQ Accordion**: Uses `useState` for managing active/inactive states (passed via props)
 - **Testimonials Carousel**: Auto-advancing with manual navigation controls
-- **Mobile Menu**: Toggle state for responsive navigation
+- **Mobile Menu**: Toggle state for responsive navigation (Header component)
 - **Animation States**: Loading and scroll reveal state management
-- **Smooth Scrolling**: Custom scroll-to-section functionality
+- **Smooth Scrolling**: Custom scroll-to-section functionality (shared via props)
 
 ### Animation Architecture
 - **CSS Keyframes**: Custom animations defined in `index.css` for reusability
