@@ -27,9 +27,16 @@ function App() {
   
   // Reviews carousel state
   const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Mobile menu state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
+  };
+  
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -37,6 +44,7 @@ function App() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMobileMenuOpen(false); // Close mobile menu after navigation
   };
 
   // Review data
@@ -67,131 +75,241 @@ function App() {
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
       <div className="w-full max-w-7xl mx-auto relative px-4 sm:px-6 lg:px-8">
       {/* Header */}
-      <header className="relative w-full">
-        <div className="font-mono font-extralight text-sm absolute top-8" style={{left: '117px', zIndex: 20}}>xcuxion</div>
-        <nav 
-          className="absolute flex space-x-6 text-xs text-gray-600"
-          style={{
-            width: '423px',
-            height: '20px',
-            top: '31.89px',
-            left: '300px',
-            zIndex: 20
-          }}
-        >
-          <button onClick={() => scrollToSection('home')} className="font-semibold hover:text-gray-800 transition-colors">Home</button>
-          <button onClick={() => scrollToSection('services')} className="hover:text-gray-800 transition-colors">Services</button>
-          <button onClick={() => scrollToSection('contact')} className="hover:text-gray-800 transition-colors">Contact</button>
-          <button onClick={() => scrollToSection('faq')} className="hover:text-gray-800 transition-colors">FAQ</button>
+       <header className="relative w-full">
+         {/* Desktop Header - hidden on mobile */}
+         <div className="hidden lg:block">
+           <div className="font-mono font-extralight text-sm absolute top-8" style={{left: '117px', zIndex: 20}}>xcuxion</div>
+           <nav 
+             className="absolute flex space-x-6 text-xs text-gray-600"
+             style={{
+               width: '423px',
+               height: '20px',
+               top: '31.89px',
+               left: '300px',
+               zIndex: 20
+             }}
+           >
+             <button onClick={() => scrollToSection('home')} className="font-semibold hover:text-gray-800 transition-colors">Home</button>
+             <button onClick={() => scrollToSection('services')} className="hover:text-gray-800 transition-colors">Services</button>
+             <button onClick={() => scrollToSection('contact')} className="hover:text-gray-800 transition-colors">Contact</button>
+             <button onClick={() => scrollToSection('faq')} className="hover:text-gray-800 transition-colors">FAQ</button>
+           </nav>
+         </div>
+
+         {/* Mobile Header - visible only on mobile */}
+         <div className="lg:hidden relative py-4 px-4 bg-white shadow-sm">
+           <div className="flex items-center justify-between">
+             {/* Logo */}
+             <div className="font-mono font-extralight text-lg font-bold text-gray-900">
+               xcuxion
+             </div>
+             
+             {/* Mobile Menu Button */}
+             <button
+               onClick={toggleMobileMenu}
+               className="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500"
+               aria-label="Toggle menu"
+             >
+               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 {isMobileMenuOpen ? (
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                 ) : (
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                 )}
+               </svg>
+             </button>
+           </div>
+           
+           {/* Mobile Navigation Menu */}
+           {isMobileMenuOpen && (
+             <div className="mt-4 pb-4 border-t border-gray-200">
+               <nav className="flex flex-col space-y-3 mt-4">
+                 <button onClick={() => scrollToSection('home')} className="text-left py-2 px-4 text-sm font-semibold text-gray-900 hover:bg-gray-100 rounded-md transition-colors">Home</button>
+                 <button onClick={() => scrollToSection('services')} className="text-left py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded-md transition-colors">Services</button>
+                 <button onClick={() => scrollToSection('contact')} className="text-left py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded-md transition-colors">Contact</button>
+                 <button onClick={() => scrollToSection('faq')} className="text-left py-2 px-4 text-sm text-gray-600 hover:bg-gray-100 rounded-md transition-colors">FAQ</button>
         </nav>
+             </div>
+           )}
+         </div>
       </header>
 
       {/* Hero Section */}
       <section
         id="home"
-        className="relative w-full overflow-hidden min-h-[443px] mt-2"
-      >
-        {/* Top chip image */}
-        <img
-          src="/images/top chip.png"
-          alt="Top chip"
-          className="absolute top-32 left-4 sm:left-8 lg:left-16 xl:left-28 w-48 h-auto z-4"
-        />
-        
-        <div 
-          className="absolute top-36 left-4 sm:left-8 lg:left-16 xl:left-28 z-10 max-w-2xl"
-        >
+         className="relative w-full overflow-hidden min-h-[443px] lg:mt-2"
+       >
+         {/* Desktop Hero Layout - hidden on mobile */}
+         <div className="hidden lg:block">
+           {/* Top chip image */}
+           <img
+             src="/images/top chip.png"
+             alt="Top chip"
+             className="absolute top-32 left-4 sm:left-8 lg:left-16 xl:left-28 w-48 h-auto z-4"
+           />
+           
+           <div 
+             className="absolute top-36 left-4 sm:left-8 lg:left-16 xl:left-28 z-10 max-w-2xl"
+           >
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2">
             From Idea to Impact! <br /> Your Technology Partner
           </h1>
           <p className="text-sm text-gray-600 mb-4">
             From initial concept to market launch, we provide the expertise to
-            bring your tech vision to life.<br />
-            We navigate the complexities of technology and business, so you can focus on achieving your goals.
-          </p>
-        </div>
-        
-        {/* Button and Social Icons Container */}
-        <div 
-          className="absolute top-80 left-4 sm:left-8 lg:left-16 xl:left-28 z-10 flex items-center flex-wrap gap-4"
-        >
-          <button 
-            onClick={() => scrollToSection('services')}
-            className="bg-gray-900 text-white px-6 py-2 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2 min-w-max whitespace-nowrap"
-          >
-            <span>Learn more ➤</span>
+               bring your tech vision to life.<br />
+               We navigate the complexities of technology and business, so you can focus on achieving your goals.
+             </p>
+           </div>
+           
+           {/* Button and Social Icons Container */}
+           <div 
+             className="absolute top-80 left-4 sm:left-8 lg:left-16 xl:left-28 z-10 flex items-center flex-wrap gap-4"
+           >
+             <button 
+               onClick={() => scrollToSection('services')}
+               className="bg-gray-900 text-white px-6 py-2 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2 min-w-max whitespace-nowrap"
+             >
+               <span>Learn more ➤</span>
           </button>
-          
-          {/* Vertical separator line */}
-          <div className="mx-4 h-8 border-l-2 border-gray-600"></div>
-          
-          <div className="flex space-x-3 text-gray-600 text-lg">
-            <a href="#" aria-label="YouTube">
-              <FaYoutube />
+             
+             {/* Vertical separator line */}
+             <div className="mx-4 h-8 border-l-2 border-gray-600"></div>
+             
+             <div className="flex space-x-3 text-gray-600 text-lg">
+               <a href="#" aria-label="YouTube">
+                 <FaYoutube />
             </a>
             <a href="#" aria-label="LinkedIn">
               <FaLinkedinIn />
             </a>
-            <a href="#" aria-label="Facebook">
-              <FaFacebookF />
+               <a href="#" aria-label="Facebook">
+                 <FaFacebookF />
             </a>
             <a href="#" aria-label="Instagram">
               <FaInstagram />
             </a>
           </div>
         </div>
-        
-        {/* Mask group - background layer */}
-        <img
-          src="/images/Mask group.png"
-          alt="Mask group background"
-          className="absolute top-2 left-0 w-full h-full object-cover z-1"
-        />
-        
-        {/* Main hero image - Image1 */}
-        <img
-          src="/images/Final_Task_Image1.png"
+           
+           {/* Mask group - background layer */}
+           <img
+             src="/images/Mask group.png"
+             alt="Mask group background"
+             className="absolute top-2 left-0 w-full h-full object-cover z-1"
+           />
+           
+           {/* Main hero image - Image1 */}
+           <img
+             src="/images/Final_Task_Image1.png"
             alt="Technology concept illustration"
-          className="absolute top-12 right-4 sm:right-8 lg:right-16 xl:right-20 w-56 sm:w-64 lg:w-72 xl:w-80 h-auto z-2"
-        />
-        
-        {/* Incuts overlay - top layer */}
-        <img
-          src="/images/incuts.png"
-          alt="Incuts overlay"
-          className="absolute top-40 right-2 sm:right-4 lg:right-6 xl:right-8 w-80 sm:w-96 lg:w-[28rem] xl:w-[32rem] h-auto z-3"
-        />
+             className="absolute top-12 right-4 sm:right-8 lg:right-16 xl:right-20 w-56 sm:w-64 lg:w-72 xl:w-80 h-auto z-2"
+           />
+           
+           {/* Incuts overlay - top layer */}
+           <img
+             src="/images/incuts.png"
+             alt="Incuts overlay"
+             className="absolute top-40 right-2 sm:right-4 lg:right-6 xl:right-8 w-80 sm:w-96 lg:w-[28rem] xl:w-[32rem] h-auto z-3"
+           />
+         </div>
+
+         {/* Mobile Hero Layout - visible only on mobile */}
+         <div className="lg:hidden px-4 py-8 min-h-[500px] bg-gradient-to-br from-gray-50 to-gray-100">
+           <div className="flex flex-col items-start">
+             {/* Top chip image */}
+             <img
+               src="/images/top chip.png"
+               alt="Top chip"
+               className="w-32 h-auto mb-4"
+             />
+             
+             <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight mb-4 text-gray-900">
+               From Idea to Impact! <br /> Your Technology Partner
+             </h1>
+             
+             <p className="text-sm text-gray-600 mb-6 max-w-lg">
+               From initial concept to market launch, we provide the expertise to
+               bring your tech vision to life. We navigate the complexities of
+               technology and business, so you can focus on achieving your goals.
+             </p>
+             
+             {/* Button and Social Icons Container */}
+             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+               <button 
+                 onClick={() => scrollToSection('services')}
+                 className="bg-gray-900 text-white px-6 py-3 rounded text-sm font-semibold hover:bg-gray-800 transition-colors flex items-center space-x-2"
+               >
+                 <span>Learn more</span>
+                 <FaChevronRight size={12} />
+               </button>
+               
+               {/* Vertical separator line - hidden on mobile */}
+               <div className="hidden sm:block mx-4 h-8 border-l-2 border-gray-600"></div>
+               
+               <div className="flex space-x-4 text-gray-600 text-xl">
+                 <a href="#" aria-label="YouTube" className="hover:text-gray-800 transition-colors">
+                   <FaYoutube />
+                 </a>
+                 <a href="#" aria-label="LinkedIn" className="hover:text-gray-800 transition-colors">
+                   <FaLinkedinIn />
+                 </a>
+                 <a href="#" aria-label="Facebook" className="hover:text-gray-800 transition-colors">
+                   <FaFacebookF />
+                 </a>
+                 <a href="#" aria-label="Instagram" className="hover:text-gray-800 transition-colors">
+                   <FaInstagram />
+                 </a>
+               </div>
+          </div>
+             
+             {/* Hero images for mobile */}
+             <div className="relative w-full flex justify-center">
+               <img
+                 src="/images/Final_Task_Image1.png"
+                 alt="Technology concept illustration"
+                 className="w-64 h-auto relative z-2"
+               />
+               <img
+                 src="/images/incuts.png"
+                 alt="Incuts overlay"
+                 className="absolute top-4 -right-4 w-72 h-auto z-3 opacity-80"
+               />
+          </div>
+          </div>
+        </div>
       </section>
 
       {/* Services Section */}
       <section
         id="services"
-        className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8"
-      >
-         <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
-           <img
-             src="/images/top chip service.png"
-             alt="Services"
-             className="w-40 h-auto"
-           />
+         className="w-full py-16 bg-white px-4 sm:px-6 lg:px-8"
+       >
+          <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
+            <img
+              src="/images/top chip service.png"
+              alt="Services"
+              className="w-32 sm:w-40 h-auto"
+            />
         </div>
-         <h2 className="text-center text-2xl font-bold mb-12">What we do</h2>
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm text-gray-700">
+          <h2 className="text-center text-xl sm:text-2xl font-bold mb-8 sm:mb-12">What we do</h2>
+          
+          {/* Desktop Services Layout - hidden on mobile */}
+          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm text-gray-700">
           <div className="flex space-x-4">
-             <div className="mt-1">
-               <img
-                 src="/images/Group 1.png"
-                 alt="Service icon"
-                 className="object-contain flex-shrink-0"
-                 style={{
-                   width: '199px',
-                   height: '143px',
-                   marginTop: '-50px'
-                 }}
-               />
+              <div className="mt-1">
+                <img
+                  src="/images/Group 1.png"
+                  alt="Service icon"
+                  className="object-contain flex-shrink-0"
+                  style={{
+                    width: '199px',
+                    height: '143px',
+                    marginTop: '-50px'
+                  }}
+                />
             </div>
             <div>
-               <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
+                <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
               <p>
                 Sit amet consectetur adipisicing elit. Maxime mollitia,
                 molestiae quas vel sint commodi repudiandae consequuntur
@@ -200,115 +318,205 @@ function App() {
               </p>
             </div>
           </div>
-           <div className="flex space-x-4 p-6 bg-lime-50 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)', marginTop: '-20px'}}>
-             <div className="mt-1">
+            <div className="flex space-x-4 p-6 bg-lime-50 rounded-lg" style={{border: '1px solid rgba(148, 180, 0, 0.3)', marginTop: '-20px'}}>
+              <div className="mt-1">
+                <img
+                  src="/images/Group 2.png"
+                  alt="Service icon"
+                  className="object-contain flex-shrink-0"
+                  style={{
+                    width: '250px',
+                    height: '180px',
+                    marginTop: '-70px'
+                  }}
+                />
+            </div>
+            <div>
+                <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
+              <p>
+                Sit amet consectetur adipisicing elit. Maxime mollitia,
+                molestiae quas vel sint commodi repudiandae consequuntur
+                voluptatum laborum numquam blanditiis harum quisquam eius sed
+                odit fugiat iusto fuga praesentium.
+              </p>
+            </div>
+          </div>
+          <div className="flex space-x-4">
+              <div className="mt-1">
+                <img
+                  src="/images/Group 1.png"
+                  alt="Service icon"
+                  className="object-contain flex-shrink-0"
+                  style={{
+                    width: '199px',
+                    height: '143px',
+                    marginTop: '-50px'
+                  }}
+                />
+            </div>
+            <div>
+                <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
+              <p>
+                Sit amet consectetur adipisicing elit. Maxime mollitia,
+                molestiae quas vel sint commodi repudiandae consequuntur
+                voluptatum laborum numquam blanditiis harum quisquam eius sed
+                odit fugiat iusto fuga praesentium.
+              </p>
+            </div>
+          </div>
+        </div>
+
+         {/* Mobile Services Layout - visible only on mobile */}
+         <div className="lg:hidden space-y-6">
+           {/* Service Card 1 */}
+           <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4 p-4 rounded-lg hover:shadow-lg transition-shadow">
+             <div className="flex-shrink-0">
+               <img
+                 src="/images/Group 1.png"
+                 alt="Service icon"
+                 className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+               />
+             </div>
+             <div>
+               <h3 className="font-semibold text-base sm:text-lg mb-2 text-gray-900">Lorem ipsum dolor</h3>
+               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                 Sit amet consectetur adipisicing elit. Maxime mollitia,
+                 molestiae quas vel sint commodi repudiandae consequuntur
+                 voluptatum laborum numquam.
+               </p>
+             </div>
+           </div>
+           
+           {/* Service Card 2 - Featured */}
+           <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4 p-4 sm:p-6 bg-lime-50 rounded-lg border border-lime-200 hover:shadow-lg transition-shadow">
+             <div className="flex-shrink-0">
                <img
                  src="/images/Group 2.png"
                  alt="Service icon"
-                 className="object-contain flex-shrink-0"
-                 style={{
-                   width: '250px',
-                   height: '180px',
-                   marginTop: '-70px'
-                 }}
+                 className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
                />
-            </div>
-            <div>
-               <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
-              <p>
-                Sit amet consectetur adipisicing elit. Maxime mollitia,
-                molestiae quas vel sint commodi repudiandae consequuntur
-                voluptatum laborum numquam blanditiis harum quisquam eius sed
-                odit fugiat iusto fuga praesentium.
-              </p>
-            </div>
-          </div>
-          <div className="flex space-x-4">
-             <div className="mt-1">
+             </div>
+             <div>
+               <h3 className="font-semibold text-base sm:text-lg mb-2 text-gray-900">Lorem ipsum dolor</h3>
+               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                 Sit amet consectetur adipisicing elit. Maxime mollitia,
+                 molestiae quas vel sint commodi repudiandae consequuntur
+                 voluptatum laborum numquam.
+               </p>
+             </div>
+           </div>
+
+           {/* Service Card 3 */}
+           <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-4 sm:space-y-0 sm:space-x-4 p-4 rounded-lg hover:shadow-lg transition-shadow">
+             <div className="flex-shrink-0">
                <img
                  src="/images/Group 1.png"
                  alt="Service icon"
-                 className="object-contain flex-shrink-0"
-                 style={{
-                   width: '199px',
-                   height: '143px',
-                   marginTop: '-50px'
-                 }}
+                 className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
                />
-            </div>
-            <div>
-               <h3 className="font-semibold mb-2">Lorem ipsum dolor</h3>
-              <p>
-                Sit amet consectetur adipisicing elit. Maxime mollitia,
-                molestiae quas vel sint commodi repudiandae consequuntur
-                voluptatum laborum numquam blanditiis harum quisquam eius sed
-                odit fugiat iusto fuga praesentium.
-              </p>
-            </div>
-          </div>
-        </div>
+             </div>
+             <div>
+               <h3 className="font-semibold text-base sm:text-lg mb-2 text-gray-900">Lorem ipsum dolor</h3>
+               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                 Sit amet consectetur adipisicing elit. Maxime mollitia,
+                 molestiae quas vel sint commodi repudiandae consequuntur
+                 voluptatum laborum numquam.
+               </p>
+             </div>
+           </div>
+         </div>
       </section>
 
       {/* Working Process Section */}
-      <section className="w-full py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center space-x-2 text-xs text-gray-500">
-          <img
-            src="/images/top chip WORKFLOW.png"
-            alt="Workflow"
-            className="w-40 h-auto"
-          />
+       <section className="w-full py-12 sm:py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
+         <div className="max-w-7xl mx-auto">
+           <div className="flex items-center justify-center space-x-2 text-xs text-gray-500 mb-4">
+             <img
+               src="/images/top chip WORKFLOW.png"
+               alt="Workflow"
+               className="w-32 sm:w-40 h-auto"
+             />
         </div>
-        <h2 className="text-center text-2xl font-bold mb-12">Our working process</h2>
-        <div className="flex justify-center items-center space-x-8">
+           <h2 className="text-center text-xl sm:text-2xl font-bold mb-8 sm:mb-12">Our working process</h2>
+           
+           {/* Desktop Process Flow - hidden on mobile */}
+           <div className="hidden lg:flex justify-center items-center space-x-8">
           {/* Each step */}
-          <div className="flex flex-col items-center space-y-3">
-            <div className="w-16 h-16 rounded-full border-2 border-gray-400 flex items-center justify-center">
-              <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
-                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+             <div className="flex flex-col items-center space-y-3">
+               <div className="w-16 h-16 rounded-full border-2 border-gray-400 flex items-center justify-center">
+                 <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                   <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                 </svg>
+               </div>
+               <span className="text-sm font-medium text-gray-600">Planning</span>
+             </div>
+             <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
+             <div className="flex flex-col items-center space-y-3">
+               <div className="w-16 h-16 rounded-full border-2 border-lime-500 flex items-center justify-center">
+                 <svg className="w-8 h-8 text-lime-500" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                   <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                 </svg>
+               </div>
+               <span className="text-sm font-medium text-lime-500">Analysis</span>
+             </div>
+             <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
+             <div className="flex flex-col items-center space-y-3">
+               <div className="w-16 h-16 rounded-full border-2 border-gray-400 flex items-center justify-center">
+                 <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                   <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                 </svg>
+               </div>
+               <span className="text-sm font-medium text-gray-600">Design</span>
             </div>
-            <span className="text-sm font-medium text-gray-600">Planning</span>
+             <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
+             <div className="flex flex-col items-center space-y-3">
+               <div className="w-16 h-16 rounded-full border-2 border-lime-500 flex items-center justify-center">
+                 <svg className="w-8 h-8 text-lime-500" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                   <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                 </svg>
           </div>
-          <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
-          <div className="flex flex-col items-center space-y-3">
-            <div className="w-16 h-16 rounded-full border-2 border-lime-500 flex items-center justify-center">
-              <svg className="w-8 h-8 text-lime-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
-                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+               <span className="text-sm font-medium text-lime-500">Development</span>
             </div>
-            <span className="text-sm font-medium text-lime-500">Analysis</span>
+             <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
+             <div className="flex flex-col items-center space-y-3">
+               <div className="w-16 h-16 rounded-full border-2 border-gray-400 flex items-center justify-center">
+                 <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                   <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                 </svg>
           </div>
-          <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
-          <div className="flex flex-col items-center space-y-3">
-            <div className="w-16 h-16 rounded-full border-2 border-gray-400 flex items-center justify-center">
-              <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
-                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+               <span className="text-sm font-medium text-gray-600">Maintenance</span>
             </div>
-            <span className="text-sm font-medium text-gray-600">Design</span>
           </div>
-          <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
-          <div className="flex flex-col items-center space-y-3">
-            <div className="w-16 h-16 rounded-full border-2 border-lime-500 flex items-center justify-center">
-              <svg className="w-8 h-8 text-lime-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
-                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+           
+           {/* Mobile Process Flow - visible only on mobile */}
+           <div className="lg:hidden space-y-6">
+             {[
+               { name: "Planning", active: false },
+               { name: "Analysis", active: true },
+               { name: "Design", active: false },
+               { name: "Development", active: true },
+               { name: "Maintenance", active: false }
+             ].map((step, index) => (
+               <div key={step.name} className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                 <div className={`w-12 h-12 rounded-full border-2 flex items-center justify-center ${
+                   step.active ? 'border-lime-500 bg-lime-50' : 'border-gray-300 bg-gray-50'
+                 }`}>
+                   <svg className={`w-6 h-6 ${step.active ? 'text-lime-500' : 'text-gray-400'}`} fill="currentColor" viewBox="0 0 24 24">
+                     <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+                     <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                   </svg>
             </div>
-            <span className="text-sm font-medium text-lime-500">Development</span>
+                 <div>
+                   <h3 className={`font-semibold ${step.active ? 'text-lime-600' : 'text-gray-700'}`}>{step.name}</h3>
+                   <p className="text-sm text-gray-500">Step {index + 1} of our process</p>
           </div>
-          <div className="w-8 h-0.5 border-dashed border-t-2 border-gray-400"></div>
-          <div className="flex flex-col items-center space-y-3">
-            <div className="w-16 h-16 rounded-full border-2 border-gray-400 flex items-center justify-center">
-              <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
-                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
             </div>
-            <span className="text-sm font-medium text-gray-600">Maintenance</span>
+             ))}
           </div>
         </div>
       </section>
