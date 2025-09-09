@@ -12,6 +12,7 @@ A modern, responsive landing page for XCUXION - a technology company specializin
   - Interactive contact form with focus states and hover animations
   - Animated process workflow with interactive steps
   - Floating hero images and pulsing effects
+  - Scroll-to-top floating button with smart visibility
 - **Modern UI/UX**: Clean, professional design with consistent branding and visual hierarchy
 - **Performance Optimized**: Fast loading with optimized images, efficient animations, and modern CSS
 - **Accessibility**: Proper ARIA labels, semantic HTML, keyboard navigation, and reduced motion support
@@ -179,6 +180,7 @@ PROJECT/
 - **Mobile Menu**: Toggle state for responsive navigation (Header component)
 - **Animation States**: Loading and scroll reveal state management
 - **Smooth Scrolling**: Custom scroll-to-section functionality (shared via props)
+- **Scroll-to-Top Button**: Smart visibility state based on scroll position (300px threshold) with event listener management
 
 ### Animation Architecture
 - **CSS Keyframes**: Custom animations defined in `index.css` for reusability
@@ -210,6 +212,7 @@ PROJECT/
 - **Hover Effects**: Interactive buttons, cards, and icons with lift/scale effects
 - **Glow Effects**: Subtle lime-green glows on primary interactive elements
 - **Micro-Interactions**: Form inputs, navigation, and button hover states
+- **Scroll-to-Top Animation**: Smooth bounce animation with scale hover effects
 
 ### **Animation Classes**
 ```css
@@ -231,6 +234,7 @@ PROJECT/
 - **Service Cards**: Lift effects with icon scaling on hover
 - **Form Elements**: Smooth border transitions and focus states
 - **Navigation**: Enhanced mobile menu with slide animations
+- **Scroll-to-Top Button**: Fixed positioning with hover effects and smooth scrolling
 
 ### **Performance Considerations**
 - **Hardware Acceleration**: CSS transforms for 60fps animations
@@ -334,7 +338,36 @@ All evaluation bonus features have been successfully implemented:
 - Social media icons with scale and color transitions
 - Button hover effects with lift animations and glow effects
 - Mobile-optimized touch interactions
+- **Scroll-to-Top Button**: Smart floating button that appears after 300px scroll with smooth scrolling functionality
 
+## 📱 Scroll-to-Top Button Feature
+
+### **Functionality**
+- **Smart Visibility**: Button only appears when user scrolls down more than 300px
+- **Smooth Scrolling**: Uses native `window.scrollTo()` with smooth behavior
+- **Fixed Positioning**: Stays in bottom-right corner (8px from edges)
+- **High Z-Index**: Positioned above all other content (z-50)
+
+### **Design**
+- **Styling**: Lime green circular button matching site theme
+- **Icon**: FontAwesome chevron-up icon (FaChevronUp)
+- **Animations**: 
+  - Subtle bounce animation (`animate-bounce-slow`)
+  - Scale effect on hover (`hover:scale-110`)
+  - Smooth color transition on hover
+- **Accessibility**: Proper `aria-label` for screen readers
+
+### **Technical Implementation**
+- **State Management**: `showScrollTop` boolean state
+- **Event Listener**: Scroll event listener with cleanup
+- **Performance**: Efficient scroll position detection
+- **Cross-browser**: Compatible with all modern browsers
+
+### **User Experience**
+- **Threshold**: Appears after 300px scroll for optimal UX
+- **Responsive**: Works seamlessly on all device sizes
+- **Visual Feedback**: Clear hover states and smooth animations
+- **Intuitive**: Standard bottom-right positioning users expect
 
 ## 🚦 Development Notes
 
