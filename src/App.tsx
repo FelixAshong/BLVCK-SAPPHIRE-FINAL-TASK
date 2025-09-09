@@ -18,7 +18,8 @@ import {
   FaNetworkWired,
   FaLeaf,
   FaUserTie,
-  FaChevronRight
+  FaChevronRight,
+  FaChevronUp
 } from "react-icons/fa";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -39,6 +40,9 @@ function App() {
   
   // Animation state
   const [isLoaded, setIsLoaded] = useState(false);
+  
+  // Scroll to top button state
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -54,6 +58,13 @@ function App() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMobileMenuOpen(false); // Close mobile menu after navigation
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   // Scroll reveal effect
@@ -83,6 +94,17 @@ function App() {
       setIsLoaded(true);
     }, 300);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Scroll to top button visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setShowScrollTop(scrollTop > 300); // Show button after scrolling 300px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Review data
@@ -490,6 +512,17 @@ function App() {
       <Contact />
 
       <Footer scrollToSection={scrollToSection} />
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 bg-lime-500 hover:bg-lime-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 animate-bounce-slow"
+          aria-label="Scroll to top"
+        >
+          <FaChevronUp className="w-5 h-5" />
+        </button>
+      )}
         </div>
     </div>
   );
